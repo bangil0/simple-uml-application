@@ -1,10 +1,25 @@
-## Use Case Diagramming Tool
+## To-do
+### Belum dikerjakan
+- [ ] buat obyek garis
+- [ ] buat text
+- [ ] buat bentuk primitif turunan dari kelas bentuk generik
+- [ ] perbaiki metode Paint canvas (jangan iterasi tiap bentuk di list)
+- [ ] buat supaya obyek di kanvas bisa dipindah
+- [ ] implementasi state pattern (preview, edit, static state)
+- [ ] implementasi composite pattern
+- [ ] implementasi memento pattern
+
+### Sedang dikerjakan
+
+### Sudah dikerjakan
+
+# Use Case Diagramming Tool
 Aplikasi ini merupakan tools untuk membuat diagram <b>Use Case</b>. Fitur aplikasi ini adalah dapat memilih komponen diagram use case dengan cara drag and drop.
 
 - Programming Language: C#
 - Design Pattern: State Pattern, Memento Pattern, Composite Pattern
 
-### Aturan Workflow
+## Aturan Workflow
 Repositori ini menggunakan `centralized workflow` dengan menggunakan branch `master` sebagai centralnya.
 
 Hal yang diperhatikan ketika melakukan melakukan `push`:
@@ -13,7 +28,7 @@ Hal yang diperhatikan ketika melakukan melakukan `push`:
 - Sebelum melakukan perubahan pada code, lakukan terlebih dahulu `fetch` atau `pull` agar mendapatkan code yang update dan meminimalisir conflict.
 - Setelah selesai melakukan perubahan segera lakukan `commit` dan `push` ke remote repository. Perhatikan poin pertama.
 
-### Aturan Penulisan Kode
+## Aturan Penulisan Kode
 - Nama class dan method menggunakan `PascalCasing` contohnya : 
 ```C
 public class ClassName(){
