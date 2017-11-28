@@ -5,11 +5,12 @@
 - [ ] buat bentuk primitif turunan dari kelas bentuk generik
 - [ ] perbaiki metode Paint canvas (jangan iterasi tiap bentuk di list)
 - [ ] buat supaya obyek di kanvas bisa dipindah
-- [ ] implementasi state pattern (preview, edit, static state)
 - [ ] implementasi composite pattern
 - [ ] implementasi memento pattern
 
 ### Sedang dikerjakan
+- [x] implementasi state pattern (preview, edit, static state) --- Nia
+- [x] buat bentuk primitif --- Nia
 
 ### Sudah dikerjakan
 
