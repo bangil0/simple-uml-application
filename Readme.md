@@ -1,7 +1,6 @@
 ## To-do
 ### Belum dikerjakan
 - [ ] buat text
-- [ ] buat bentuk primitif turunan dari kelas bentuk generik
 - [ ] perbaiki metode Paint canvas (jangan iterasi tiap bentuk di list)
 - [ ] buat supaya obyek di kanvas bisa dipindah
 - [ ] implementasi composite pattern
@@ -11,6 +10,7 @@
 - [x] implementasi state pattern (preview, edit, static state) --- Nia
 - [x] buat bentuk primitif --- Nia
 - [x] buat obyek garis --- Val
+- [x] buat bentuk primitif turunan dari kelas bentuk generik --- Salman
 
 ### Sudah dikerjakan
 
