@@ -9,7 +9,7 @@ using System.Windows.Forms;
 
 namespace WindowsFormsApp2
 {
-    class Line
+    public class Line
     {
         public Point start { get; set; }
         public Point end { get; set; }
