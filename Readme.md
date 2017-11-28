@@ -1,6 +1,5 @@
 ## To-do
 ### Belum dikerjakan
-- [ ] buat obyek garis
 - [ ] buat text
 - [ ] buat bentuk primitif turunan dari kelas bentuk generik
 - [ ] perbaiki metode Paint canvas (jangan iterasi tiap bentuk di list)
@@ -11,6 +10,7 @@
 ### Sedang dikerjakan
 - [x] implementasi state pattern (preview, edit, static state) --- Nia
 - [x] buat bentuk primitif --- Nia
+- [x] buat obyek garis --- Val
 
 ### Sudah dikerjakan
 
