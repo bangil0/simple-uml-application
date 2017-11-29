@@ -46,6 +46,11 @@ namespace WindowsFormsApp2
                 Math.Abs(initPoint.Y - currentPoint.Y));
         }
 
+        private Line getLine()
+        {
+            return new Line();
+        }
+
         public Form1()
         {
             InitializeComponent();
@@ -224,6 +229,7 @@ namespace WindowsFormsApp2
                 Drawing = false;
                 
                 var rc = getRectangle();
+                var ln = getLine();
 
                 if (rc.Width > 0 && rc.Height > 0)
                 {
@@ -236,8 +242,17 @@ namespace WindowsFormsApp2
                     {
                         circles.Add(rc);
                     }                    
+<<<<<<< HEAD
                 }*/
 
+=======
+
+                    if (Shape == 4)
+                    {
+                        points.Add(ln);
+                    }
+                }
+>>>>>>> 208f28c18deced193645988c1cc4632417585bbe
                 /*
                 if (Shape == 4)
                 {
