@@ -74,12 +74,6 @@ namespace WindowsFormsApp2
             canvas1.Name = "Untitled-1";
             this.editor.AddCanvas(canvas1);
 
-            /*
-            ICanvas canvas2 = new DefaultCanvas();
-            canvas2.Name = "Untitled-2";
-            this.editor.AddCanvas(canvas2);
-            */
-
             #endregion
 
             //#region Toolbox
@@ -242,27 +236,20 @@ namespace WindowsFormsApp2
                     {
                         circles.Add(rc);
                     }                    
-<<<<<<< HEAD
-                }*/
-
-=======
-
-                    if (Shape == 4)
-                    {
-                        points.Add(ln);
-                    }
                 }
->>>>>>> 208f28c18deced193645988c1cc4632417585bbe
-                /*
+
+                
                 if (Shape == 4)
                 {
                     points.Add();
-                }*/
+                }
 
-                //panel1.Invalidate();
+                panel1.Invalidate();
             }
-            
-        //}
+            */
+        }
+        
+
     /*
         private void buttonNone_Click(object sender, EventArgs e)
         {

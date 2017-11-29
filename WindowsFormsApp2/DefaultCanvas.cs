@@ -115,8 +115,8 @@ namespace WindowsFormsApp2
 
         private void DefaultCanvas_MouseDown(object sender, MouseEventArgs e)
         {
-            this.rectangle = new Rectangle(e.X, e.Y);
-            this.objectShapes.Add(rectangle);
+            rectangle = new Rectangle(e.X, e.Y);
+            objectShapes.Add(rectangle);
 
             /*
             if (this.activeTool != null)
@@ -130,16 +130,18 @@ namespace WindowsFormsApp2
         {
             if (e.Button == MouseButtons.Left)
             {
-                if (this.rectangle != null)
+                if (rectangle != null)
                 {
-                    int width = e.X - this.rectangle.X;
-                    int height = e.Y - this.rectangle.Y;
+                    int width = e.X - rectangle.X;
+                    int height = e.Y - rectangle.Y;
 
                     if (width > 0 && height > 0)
                     {
-                        this.rectangle.Width = width;
-                        this.rectangle.Height = height;
+                        rectangle.Width = width;
+                        rectangle.Height = height;
                     }
+
+                    Repaint();
                 }
             }
 
@@ -153,6 +155,10 @@ namespace WindowsFormsApp2
 
         private void DefaultCanvas_MouseUp(object sender, MouseEventArgs e)
         {
+            rectangle.ChangeState(StaticState.GetInstance());
+
+            Repaint();
+
             /*
             if (this.activeTool != null)
             {
@@ -172,8 +178,8 @@ namespace WindowsFormsApp2
 
         public void Repaint()
         {
-            this.Invalidate();
-            this.Update();
+            Invalidate();
+            Update();
         }
         /*
         public void SetActiveTool(ITool tool)
