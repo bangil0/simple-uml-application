@@ -9,3 +9,8 @@ C:\Users\Salman Rameli\Documents\Visual Studio 2017\Projects\WindowsFormsApp2\Wi
 C:\Users\Salman Rameli\Documents\Visual Studio 2017\Projects\WindowsFormsApp2\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.exe
 C:\Users\Salman Rameli\Documents\Visual Studio 2017\Projects\WindowsFormsApp2\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.pdb
 E:\Kuliah\Semester 7\KPL\simple-uml-application\WindowsFormsApp2\bin\Debug\WindowsFormsApp2.exe.config
+C:\Users\DELL\Desktop\hasilC#\KPL-FP-UseCase\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.csprojResolveAssemblyReference.cache
+C:\Users\DELL\Desktop\hasilC#\KPL-FP-UseCase\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.Form1.resources
+C:\Users\DELL\Desktop\hasilC#\KPL-FP-UseCase\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.Properties.Resources.resources
+C:\Users\DELL\Desktop\hasilC#\KPL-FP-UseCase\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.csproj.GenerateResource.Cache
+C:\Users\DELL\Desktop\hasilC#\KPL-FP-UseCase\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.csproj.CoreCompileInputs.cache
