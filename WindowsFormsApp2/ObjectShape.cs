@@ -7,6 +7,30 @@ using System.Drawing;
 
 namespace WindowsFormsApp2
 {
+    public class PreviewState : DrawingState
+    {
+        private static DrawingState instance;
+
+        public static DrawingState GetInstance()
+        {
+            if (instance == null)
+            {
+                instance = new PreviewState();
+            }
+            return instance;
+        }
+
+        public override void Draw(ObjectShape obj)
+        {
+            obj.RenderOnPreview();
+        }
+
+        public override void Select(ObjectShape obj)
+        {
+            //obj.ChangeState(EditState.GetInstance());
+        }
+    }
+
     public abstract class ObjectShape
     {
         public Guid ID { get; set; }
@@ -24,8 +48,8 @@ namespace WindowsFormsApp2
 
         public ObjectShape()
         {
-            ID = Guid.NewGuid();
-            this.ChangeState(PreviewState.GetInstance());
+           ID = Guid.NewGuid();
+           this.ChangeState(PreviewState.GetInstance());
         }
 
         public abstract bool Add(ObjectShape obj);
