@@ -1,8 +1,9 @@
 ## To-do
 ### Belum dikerjakan
+- [ ] buat ellipse
 - [ ] buat text
-- [ ] perbaiki metode Paint canvas (jangan iterasi tiap bentuk di list)
 - [ ] buat supaya obyek di kanvas bisa dipindah
+- [ ] tambahin menubar untuk opsi undo - redo
 - [ ] implementasi composite pattern
 - [ ] implementasi memento pattern
 
@@ -11,6 +12,7 @@
 - [x] buat bentuk primitif --- Nia
 - [x] buat obyek garis --- Val
 - [x] buat bentuk primitif turunan dari kelas bentuk generik --- Salman
+- [x] tambahin toolbar untuk milih obyek apa yang digambar --- Salman
 
 ### Sudah dikerjakan
 
