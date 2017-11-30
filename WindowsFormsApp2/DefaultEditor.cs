@@ -9,6 +9,8 @@ namespace WindowsFormsApp2
         private List<ICanvas> canvases;
         private ICanvas selectedCanvas;
 
+        public DefaultToolbox Toolbox { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+
         //private IToolbox toolbox;
         /*
         public IToolbox Toolbox
@@ -41,11 +43,6 @@ namespace WindowsFormsApp2
         public void AddCanvas(ICanvas canvas)
         {
             canvases.Add(canvas);
-            TabPage tabPage = new TabPage(canvas.Name);
-            tabPage.Controls.Add((Control)canvas);
-            this.Controls.Add(tabPage);
-            this.SelectedTab = tabPage;
-            this.selectedCanvas = canvas;
         }
 
         public ICanvas GetSelectedCanvas()

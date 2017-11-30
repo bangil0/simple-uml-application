@@ -10,11 +10,8 @@ namespace WindowsFormsApp2
     {
         //private ITool activeTool;
         private List<ObjectShape> objectShapes = new List<ObjectShape>();
-        List<Rectangle> rectangles = new List<Rectangle>();
 
         Rectangle rectangle;
-
-        //public string Name { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
 
         public DefaultCanvas()
         {

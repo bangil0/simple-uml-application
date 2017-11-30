@@ -47,6 +47,35 @@ namespace WindowsFormsApp2
             }
         }
 
+        private void toggleButton_CheckedChanged(object sender, EventArgs e)
+        {
+            if (sender is ToolStripButton)
+            {
+                ToolStripButton button = (ToolStripButton)sender;
+
+                if (button.Checked)
+                {
+                    if (button is ITool)
+                    {
+                        this.activeTool = (ITool)button;
+                        Debug.WriteLine(this.activeTool.Name + " is activated.");
+
+                        if (ToolSelected != null)
+                        {
+                            ToolSelected(this.activeTool);
+                        }
+
+                        UncheckInactiveToggleButtons();
+                    }
+                    else
+                    {
+                        throw new InvalidCastException("The tool is not an instance of ITool.");
+                    }
+                }
+            }
+        }
+        */
+        /*
         public void Register(IPlugin plugin)
         {
             if (plugin != null)
@@ -78,33 +107,7 @@ namespace WindowsFormsApp2
             }
         }
 
-        private void toggleButton_CheckedChanged(object sender, EventArgs e)
-        {
-            if (sender is ToolStripButton)
-            {
-                ToolStripButton button = (ToolStripButton)sender;
-
-                if (button.Checked)
-                {
-                    if (button is ITool)
-                    {
-                        this.activeTool = (ITool)button;
-                        Debug.WriteLine(this.activeTool.Name + " is activated.");
-
-                        if (ToolSelected != null)
-                        {
-                            ToolSelected(this.activeTool);
-                        }
-
-                        UncheckInactiveToggleButtons();
-                    }
-                    else
-                    {
-                        throw new InvalidCastException("The tool is not an instance of ITool.");
-                    }
-                }
-            }
-        }
+        
 
         private void UncheckInactiveToggleButtons()
         {

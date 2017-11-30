@@ -64,6 +64,7 @@
     </Compile>
     <Compile Include="ICanvas.cs" />
     <Compile Include="IEditor.cs" />
+    <Compile Include="ITool.cs" />
     <Compile Include="Line.cs" />
     <Compile Include="ObjectShape.cs" />
     <Compile Include="Panel1.cs">

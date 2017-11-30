@@ -14,8 +14,8 @@ namespace WindowsFormsApp2
     public partial class Form1 : Form
     {
         private IEditor editor;
+        private DefaultToolbox toolbox;
         /*
-        private IToolbox toolbox;
         private IToolbar toolbar;
         private IMenubar menubar;
         private IPlugin[] plugins;*/
@@ -38,22 +38,22 @@ namespace WindowsFormsApp2
             this.toolStripContainer1.ContentPanel.Controls.Add((Control)this.editor);
 
             ICanvas canvas1 = new DefaultCanvas();
-            canvas1.Name = "Untitled-1";
             this.editor.AddCanvas(canvas1);
 
             #endregion
 
-            //#region Toolbox
+            #region Toolbox
 
             // Initializing toolbox
-            /*
+            
             Debug.WriteLine("Loading toolbox...");
             this.toolbox = new DefaultToolbox();
             this.toolStripContainer1.LeftToolStripPanel.Controls.Add((Control)this.toolbox);
-            this.editor.Toolbox = toolbox;
+            //this.editor.Toolbox = toolbox;
 
             #endregion
 
+            /*
             #region Tools
 
             // Initializing tools
