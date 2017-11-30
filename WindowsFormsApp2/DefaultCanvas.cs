@@ -31,8 +31,8 @@ namespace WindowsFormsApp2
 
             this.Paint += DefaultCanvas_Paint;
             this.MouseDown += DefaultCanvas_MouseDown;
-            this.MouseUp += DefaultCanvas_MouseUp;
             this.MouseMove += DefaultCanvas_MouseMove;
+            this.MouseUp += DefaultCanvas_MouseUp;
             this.MouseDoubleClick += DefaultCanvas_MouseDoubleClick;
             this.KeyDown += DefaultCanvas_KeyDown;
             this.KeyUp += DefaultCanvas_KeyUp;

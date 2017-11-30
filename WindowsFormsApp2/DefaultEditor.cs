@@ -61,7 +61,6 @@ namespace WindowsFormsApp2
         public void RemoveSelectedCanvas()
         {
             //TabPage selectedTab = this.SelectedTab;
-
         }
 
         public void SelectCanvas(ICanvas canvas)
