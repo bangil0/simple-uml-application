@@ -4,24 +4,13 @@ using System.Windows.Forms;
 
 namespace WindowsFormsApp2
 {
-    public class DefaultToolbox: ToolStrip
+    public class DefaultToolbox: ToolStrip, IToolbox
     {
-        /*
+        public ITool ActiveTool { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+
+        public event ToolSelectedEventHandler ToolSelected;
+
         private ITool activeTool;
-
-        public ITool ActiveTool
-        {
-            get
-            {
-                return this.activeTool;
-            }
-
-            set
-            {
-                this.activeTool = value;
-            }
-        }
-        */
 
         //public event ToolSelectedEventHandler ToolSelected;
 
@@ -29,22 +18,25 @@ namespace WindowsFormsApp2
         {
             this.Items.Add(new ToolStripSeparator());
         }
-        /*
+
         public void AddTool(ITool tool)
         {
-            Debug.WriteLine(tool.Name + " is added into toolbox.");
-
             if (tool is ToolStripButton)
             {
                 ToolStripButton toggleButton = (ToolStripButton)tool;
 
                 if (toggleButton.CheckOnClick)
                 {
-                    toggleButton.CheckedChanged += toggleButton_CheckedChanged;
+                    //toggleButton.CheckedChanged += toggleButton_CheckedChanged;
                 }
 
                 this.Items.Add(toggleButton);
             }
+        }
+
+        public void RemoveTool(ITool tool)
+        {
+            throw new NotImplementedException();
         }
 
         private void toggleButton_CheckedChanged(object sender, EventArgs e)
@@ -73,6 +65,38 @@ namespace WindowsFormsApp2
                     }
                 }
             }
+        }
+
+        private void UncheckInactiveToggleButtons()
+        {
+            foreach (ToolStripItem item in this.Items)
+            {
+                if (item != this.activeTool)
+                {
+                    if (item is ToolStripButton)
+                    {
+                        ((ToolStripButton)item).Checked = false;
+                    }
+                }
+            }
+        }
+
+        /*
+        public void AddTool(ITool tool)
+        {
+           Debug.WriteLine(tool.Name + " is added into toolbox.");
+
+           if (tool is ToolStripButton)
+           {
+               ToolStripButton toggleButton = (ToolStripButton)tool;
+
+               if (toggleButton.CheckOnClick)
+               {
+                   toggleButton.CheckedChanged += toggleButton_CheckedChanged;
+               }
+
+               this.Items.Add(toggleButton);
+           }
         }
         */
         /*
@@ -108,19 +132,6 @@ namespace WindowsFormsApp2
         }
 
         
-
-        private void UncheckInactiveToggleButtons()
-        {
-            foreach (ToolStripItem item in this.Items)
-            {
-                if (item != this.activeTool)
-                {
-                    if (item is ToolStripButton)
-                    {
-                        ((ToolStripButton)item).Checked = false;
-                    }
-                }
-            }
-        }*/
+        */
     }
 }

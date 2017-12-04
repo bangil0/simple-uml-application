@@ -9,10 +9,8 @@ namespace WindowsFormsApp2
         private List<ICanvas> canvases;
         private ICanvas selectedCanvas;
 
-        public DefaultToolbox Toolbox { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-
-        //private IToolbox toolbox;
-        /*
+        private IToolbox toolbox;
+        
         public IToolbox Toolbox
         {
             get
@@ -24,7 +22,7 @@ namespace WindowsFormsApp2
             {
                 this.toolbox = value;
             }
-        }*/
+        }
 
         public DefaultEditor()
         {
@@ -37,7 +35,7 @@ namespace WindowsFormsApp2
         private void DefaultEditor_Selected(object sender, TabControlEventArgs e)
         {
             this.selectedCanvas = (ICanvas)e.TabPage.Controls[0];
-            //this.toolbox.ActiveTool = this.selectedCanvas.GetActiveTool();
+            this.toolbox.ActiveTool = this.selectedCanvas.GetActiveTool();
         }
 
         public void AddCanvas(ICanvas canvas)

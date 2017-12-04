@@ -8,10 +8,8 @@ namespace WindowsFormsApp2
 {
     public class DefaultCanvas : Control, ICanvas
     {
-        //private ITool activeTool;
+        private ITool activeTool;
         private List<ObjectShape> objectShapes = new List<ObjectShape>();
-
-        Rectangle rectangle;
 
         public DefaultCanvas()
         {
@@ -112,56 +110,30 @@ namespace WindowsFormsApp2
 
         private void DefaultCanvas_MouseDown(object sender, MouseEventArgs e)
         {
-            rectangle = new Rectangle(e.X, e.Y);
-            objectShapes.Add(rectangle);
-
-            /*
+            
             if (this.activeTool != null)
             {
                 this.activeTool.ToolMouseDown(sender, e);
                 this.Repaint();
-            }*/
+            }
         }
 
         private void DefaultCanvas_MouseMove(object sender, MouseEventArgs e)
         {
-            if (e.Button == MouseButtons.Left)
-            {
-                if (rectangle != null)
-                {
-                    int width = e.X - rectangle.X;
-                    int height = e.Y - rectangle.Y;
-
-                    if (width > 0 && height > 0)
-                    {
-                        rectangle.Width = width;
-                        rectangle.Height = height;
-                    }
-
-                    Repaint();
-                }
-            }
-
-            /*
             if (this.activeTool != null)
             {
                 this.activeTool.ToolMouseMove(sender, e);
                 this.Repaint();
-            }*/
+            }
         }
 
         private void DefaultCanvas_MouseUp(object sender, MouseEventArgs e)
-        {
-            rectangle.ChangeState(StaticState.GetInstance());
-
-            Repaint();
-
-            /*
+        {            
             if (this.activeTool != null)
             {
                 this.activeTool.ToolMouseUp(sender, e);
                 this.Repaint();
-            }*/
+            }
         }
 
         private void DefaultCanvas_Paint(object sender, PaintEventArgs e)
@@ -178,7 +150,7 @@ namespace WindowsFormsApp2
             Invalidate();
             Update();
         }
-        /*
+        
         public void SetActiveTool(ITool tool)
         {
             this.activeTool = tool;
@@ -187,7 +159,7 @@ namespace WindowsFormsApp2
         public ITool GetActiveTool()
         {
             return this.activeTool;
-        }*/
+        }
 
         public void SetBackgroundColor(Color color)
         {

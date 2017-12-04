@@ -8,9 +8,9 @@ namespace WindowsFormsApp2
 {
     public interface IEditor
     {
-        DefaultToolbox Toolbox { get; set; }
+        //DefaultToolbox Toolbox { get; set; }
 
-        //IToolbox Toolbox { get; set; }
+        IToolbox Toolbox { get; set; }
 
         void AddCanvas(ICanvas canvas);
         void SelectCanvas(ICanvas canvas);
