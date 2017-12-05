@@ -1,15 +1,18 @@
 ## To-do
 ### Belum dikerjakan
-- [ ] buat obyek garis
+- [ ] buat ellipse
 - [ ] buat text
-- [ ] buat bentuk primitif turunan dari kelas bentuk generik
-- [ ] perbaiki metode Paint canvas (jangan iterasi tiap bentuk di list)
 - [ ] buat supaya obyek di kanvas bisa dipindah
-- [ ] implementasi state pattern (preview, edit, static state)
+- [ ] tambahin menubar untuk opsi undo - redo
 - [ ] implementasi composite pattern
 - [ ] implementasi memento pattern
 
 ### Sedang dikerjakan
+- [x] implementasi state pattern (preview, edit, static state) --- Nia
+- [x] buat bentuk primitif --- Nia
+- [x] buat obyek garis --- Val
+- [x] buat bentuk primitif turunan dari kelas bentuk generik --- Salman
+- [x] tambahin toolbar untuk milih obyek apa yang digambar --- Salman
 
 ### Sudah dikerjakan
 

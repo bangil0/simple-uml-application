@@ -24,8 +24,8 @@ namespace WindowsFormsApp2
 
         public ObjectShape()
         {
-            ID = Guid.NewGuid();
-            this.ChangeState(PreviewState.GetInstance());
+           ID = Guid.NewGuid();
+           this.ChangeState(PreviewState.GetInstance());
         }
 
         public abstract bool Add(ObjectShape obj);

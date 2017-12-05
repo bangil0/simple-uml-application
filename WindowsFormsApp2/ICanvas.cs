@@ -1,0 +1,25 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace WindowsFormsApp2
+{
+    public interface ICanvas
+    {
+        String Name { get; set; }
+        ITool GetActiveTool();
+        void SetActiveTool(ITool tool);
+        void Repaint();
+        void SetBackgroundColor(Color color);
+
+        void AddDrawingObject(ObjectShape drawingObject);
+        void RemoveDrawingObject(ObjectShape drawingObject);
+
+        ObjectShape GetObjectAt(int x, int y);
+        ObjectShape SelectObjectAt(int x, int y);
+        void DeselectAllObjects();
+    }
+}
