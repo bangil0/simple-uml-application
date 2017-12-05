@@ -62,6 +62,7 @@ namespace WindowsFormsApp2
             Debug.WriteLine("Loading tools...");
             this.toolbox.AddSeparator();
             this.toolbox.AddTool(new RectangleTool());
+            this.toolbox.AddTool(new LineTool());
             /*
             if (plugins != null)
             {
