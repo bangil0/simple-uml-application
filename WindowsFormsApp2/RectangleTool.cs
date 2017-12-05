@@ -9,7 +9,7 @@ namespace WindowsFormsApp2
         //public string Name { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
         private Rectangle rectangle;
 
-        public Cursor Cursor => throw new NotImplementedException();
+        public Cursor Cursor;
 
         public ICanvas TargetCanvas
         {
@@ -28,6 +28,8 @@ namespace WindowsFormsApp2
         {            
             this.Name = "Rectangle tool";
             this.ToolTipText = "Rectangle tool";
+            this.CheckOnClick = true;
+            this.Image = IconSet.rectangle;
             this.CheckOnClick = true;
         }
 

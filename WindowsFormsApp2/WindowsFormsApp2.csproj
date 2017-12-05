@@ -63,10 +63,15 @@
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
     <Compile Include="ICanvas.cs" />
+    <Compile Include="IconSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>IconSet.resx</DependentUpon>
+    </Compile>
     <Compile Include="IEditor.cs" />
     <Compile Include="ITool.cs" />
     <Compile Include="IToolbox.cs" />
-    <Compile Include="Line.cs" />
+    <Compile Include="LineSegment.cs" />
     <Compile Include="ObjectShape.cs" />
     <Compile Include="Panel1.cs">
       <SubType>Component</SubType>
@@ -75,12 +80,19 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Rectangle.cs" />
+    <Compile Include="LineTool.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="RectangleTool.cs">
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="StaticState.cs" />
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="IconSet.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>IconSet.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -107,7 +119,13 @@
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
+    <None Include="resources\usecase.png" />
+    <None Include="resources\relation.png" />
+    <None Include="resources\actor.png" />
     <Content Include="resources\Image1.png" />
+    <None Include="resources\rectangle.png" />
+    <None Include="resources\rectangle_tool.png" />
+    <None Include="resources\rectangle_tool.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

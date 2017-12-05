@@ -6,11 +6,37 @@ namespace WindowsFormsApp2
 {
     public class DefaultToolbox: ToolStrip, IToolbox
     {
-        public ITool ActiveTool { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+        //public ITool ActiveTool { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
 
-        public event ToolSelectedEventHandler ToolSelected;
+        ITool IToolbox.ActiveTool
+        {
+            get
+            {
+                throw new NotImplementedException();
+            }
+
+            set
+            {
+                throw new NotImplementedException();
+            }
+        }
+
+        event ToolSelectedEventHandler ToolSelected;
 
         private ITool activeTool;
+
+        event ToolSelectedEventHandler IToolbox.ToolSelected
+        {
+            add
+            {
+                throw new NotImplementedException();
+            }
+
+            remove
+            {
+                throw new NotImplementedException();
+            }
+        }
 
         //public event ToolSelectedEventHandler ToolSelected;
 

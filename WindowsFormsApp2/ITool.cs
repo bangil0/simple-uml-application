@@ -10,7 +10,7 @@ namespace WindowsFormsApp2
     public interface ITool
     {
         String Name { get; set; }
-        Cursor Cursor { get; }
+        //Cursor Cursor { get; }
         ICanvas TargetCanvas { get; set; }
 
         void ToolMouseDown(object sender, MouseEventArgs e);
