@@ -42,7 +42,7 @@ namespace WindowsFormsApp2
             if(e.Button == MouseButtons.Left)
             {
                 lineSegment = new LineSegment(new System.Drawing.Point(e.X, e.Y));
-                lineSegment.endPoint = new System.Drawing.Point(e.X, e.Y);
+                lineSegment.Endpoint = new System.Drawing.Point(e.X, e.Y);
                 canvas.AddDrawingObject(lineSegment);
             }
         }
@@ -53,7 +53,7 @@ namespace WindowsFormsApp2
             {
                 if (this.lineSegment != null)
                 {
-                    lineSegment.endPoint = new System.Drawing.Point(e.X, e.Y);
+                    lineSegment.Endpoint = new System.Drawing.Point(e.X, e.Y);
                 }
             }
         }
@@ -62,7 +62,7 @@ namespace WindowsFormsApp2
         {
             if (this.lineSegment != null)
             {
-                lineSegment.endPoint = new System.Drawing.Point(e.X, e.Y);
+                lineSegment.Endpoint = new System.Drawing.Point(e.X, e.Y);
                 lineSegment.Select();
             }
             else if (e.Button == MouseButtons.Right)
@@ -89,6 +89,16 @@ namespace WindowsFormsApp2
         public void ToolHotKeysDown(object sender, Keys e)
         {
 
+        }
+
+        public void ToolKeyUp(object sender, KeyEventArgs e)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void ToolKeyDown(object sender, KeyEventArgs e)
+        {
+            throw new NotImplementedException();
         }
     }
 }

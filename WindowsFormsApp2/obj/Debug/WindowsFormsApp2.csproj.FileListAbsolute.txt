@@ -13,7 +13,6 @@ C:\Users\DELL\Desktop\hasilC#\KPL-FP-UseCase\WindowsFormsApp2\obj\Debug\WindowsF
 C:\Users\DELL\Desktop\hasilC#\KPL-FP-UseCase\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.Form1.resources
 C:\Users\DELL\Desktop\hasilC#\KPL-FP-UseCase\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.Properties.Resources.resources
 C:\Users\DELL\Desktop\hasilC#\KPL-FP-UseCase\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.csproj.GenerateResource.Cache
-C:\Users\DELL\Desktop\hasilC#\KPL-FP-UseCase\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.csproj.CoreCompileInputs.cache
 E:\Kuliah\Semester 7\KPL\simple-uml-application\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.csprojResolveAssemblyReference.cache
 E:\Kuliah\Semester 7\KPL\simple-uml-application\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.Form1.resources
 E:\Kuliah\Semester 7\KPL\simple-uml-application\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.Properties.Resources.resources
@@ -23,3 +22,9 @@ E:\Kuliah\Semester 7\KPL\simple-uml-application\WindowsFormsApp2\bin\Debug\Windo
 E:\Kuliah\Semester 7\KPL\simple-uml-application\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.exe
 E:\Kuliah\Semester 7\KPL\simple-uml-application\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.pdb
 E:\Kuliah\Semester 7\KPL\simple-uml-application\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.IconSet.resources
+C:\Users\DELL\Desktop\hasilC#\KPL-FP-UseCase\WindowsFormsApp2\bin\Debug\WindowsFormsApp2.exe.config
+C:\Users\DELL\Desktop\hasilC#\KPL-FP-UseCase\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.IconSet.resources
+C:\Users\DELL\Desktop\hasilC#\KPL-FP-UseCase\WindowsFormsApp2\bin\Debug\WindowsFormsApp2.exe
+C:\Users\DELL\Desktop\hasilC#\KPL-FP-UseCase\WindowsFormsApp2\bin\Debug\WindowsFormsApp2.pdb
+C:\Users\DELL\Desktop\hasilC#\KPL-FP-UseCase\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.exe
+C:\Users\DELL\Desktop\hasilC#\KPL-FP-UseCase\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.pdb
