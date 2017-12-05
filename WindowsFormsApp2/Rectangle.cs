@@ -85,7 +85,7 @@ namespace WindowsFormsApp2
             }
         }
 
-        /*
+
         public override void Translate(int x, int y, int xAmount, int yAmount)
         {
             this.X += xAmount;
@@ -95,7 +95,7 @@ namespace WindowsFormsApp2
             {
                 obj.Translate(x, y, xAmount, yAmount);
             }
-        }*/
+        }
 
         public override bool Add(ObjectShape obj)
         {

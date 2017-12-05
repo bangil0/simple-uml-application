@@ -9,7 +9,15 @@ namespace WindowsFormsApp2
         //public string Name { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
         private Rectangle rectangle;
 
-        public Cursor Cursor;
+        //public Cursor Cursor;
+
+        public Cursor Cursor
+        {
+            get
+            {
+                return Cursors.Arrow;
+            }
+        }
 
         public ICanvas TargetCanvas
         {
@@ -28,29 +36,9 @@ namespace WindowsFormsApp2
         {            
             this.Name = "Rectangle tool";
             this.ToolTipText = "Rectangle tool";
-            this.CheckOnClick = true;
+            //this.CheckOnClick = true;
             this.Image = IconSet.rectangle;
             this.CheckOnClick = true;
-        }
-
-        public void ToolHotKeysDown(object sender, Keys e)
-        {
-            throw new NotImplementedException();
-        }
-
-        public void ToolKeyDown(object sender, KeyEventArgs e)
-        {
-            throw new NotImplementedException();
-        }
-
-        public void ToolKeyUp(object sender, KeyEventArgs e)
-        {
-            throw new NotImplementedException();
-        }
-
-        public void ToolMouseDoubleClick(object sender, MouseEventArgs e)
-        {
-            throw new NotImplementedException();
         }
 
         public void ToolMouseDown(object sender, MouseEventArgs e)
@@ -58,9 +46,11 @@ namespace WindowsFormsApp2
             if(e.Button == MouseButtons.Left)
             {
                 MessageBox.Show("eyyy");
-                //rectangle = new Rectangle(e.X, e.Y);
-                rectangle = new Rectangle(e.X, e.Y, 100, 100);
-                this.canvas.AddDrawingObject(rectangle);
+
+                //tadinya yang rectangle dengan 2 parameter ini dikomen
+                rectangle = new Rectangle(e.X, e.Y);
+                //rectangle = new Rectangle(e.X, e.Y, 100, 100);
+                this.canvas.AddDrawingObject(this.rectangle);
             }
         }
 
@@ -68,15 +58,15 @@ namespace WindowsFormsApp2
         {
             if (e.Button == MouseButtons.Left)
             {
-                if (rectangle != null)
+                if (this.rectangle != null)
                 {
-                    int width = e.X - rectangle.X;
-                    int height = e.Y - rectangle.Y;
+                    int width = e.X - this.rectangle.X;
+                    int height = e.Y - this.rectangle.Y;
 
                     if (width > 0 && height > 0)
                     {
-                        rectangle.Width = width;
-                        rectangle.Height = height;
+                        this.rectangle.Width = width;
+                        this.rectangle.Height = height;
                     }
                 }
             }
@@ -84,7 +74,37 @@ namespace WindowsFormsApp2
 
         public void ToolMouseUp(object sender, MouseEventArgs e)
         {
-            rectangle.ChangeState(StaticState.GetInstance());
+            //rectangle.ChangeState(StaticState.GetInstance());
+            if (rectangle != null)
+            {
+                if (e.Button == MouseButtons.Left)
+                {
+                    this.rectangle.Select();
+                }
+                else if (e.Button == MouseButtons.Right)
+                {
+                    canvas.RemoveDrawingObject(this.rectangle);
+                }
+            }
+        }
+
+        public void ToolMouseDoubleClick(object sender, MouseEventArgs e)
+        {
+            
+        }
+
+        public void ToolHotKeysDown(object sender, Keys e)
+        {
+
+        }
+
+        public void ToolKeyDown(object sender, KeyEventArgs e)
+        {
+
+        }
+
+        public void ToolKeyUp(object sender, KeyEventArgs e)
+        {
 
         }
     }
