@@ -60,6 +60,8 @@ namespace WindowsFormsApp2
 
         public void ToolMouseUp(object sender, MouseEventArgs e)
         {
+            lineSegment.ChangeState(StaticState.GetInstance());
+
             if (this.lineSegment != null)
             {
                 lineSegment.Endpoint = new System.Drawing.Point(e.X, e.Y);

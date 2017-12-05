@@ -58,8 +58,9 @@ namespace WindowsFormsApp2
             // Initializing tools
             Debug.WriteLine("Loading tools...");
 
+            this.toolbox.AddTool(new LineTool());
             this.toolbox.AddTool(new RectangleTool());
-            //this.toolbox.AddTool(new EllipseTool());
+            this.toolbox.AddTool(new EllipseTool());
            
             this.toolbox.ToolSelected += Toolbox_ToolSelected;
 
