@@ -8,13 +8,13 @@
 - [ ] implementasi memento pattern
 
 ### Sedang dikerjakan
+
+### Sudah dikerjakan
 - [x] implementasi state pattern (preview, edit, static state) --- Nia
 - [x] buat bentuk primitif --- Nia
 - [x] buat obyek garis --- Val
 - [x] buat bentuk primitif turunan dari kelas bentuk generik --- Salman
 - [x] tambahin toolbar untuk milih obyek apa yang digambar --- Salman
-
-### Sudah dikerjakan
 
 # Use Case Diagramming Tool
 Aplikasi ini merupakan tools untuk membuat diagram <b>Use Case</b>. Fitur aplikasi ini adalah dapat memilih komponen diagram use case dengan cara drag and drop.
