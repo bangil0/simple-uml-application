@@ -10,8 +10,6 @@ namespace WindowsFormsApp2
     public interface ITool
     {
         String Name { get; set; }
-
-        //tadinya ini (cursor) dikomen
         Cursor Cursor { get; }
         ICanvas TargetCanvas { get; set; }
 

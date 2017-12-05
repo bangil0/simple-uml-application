@@ -1,15 +1,12 @@
 ﻿using System;
 using System.Windows.Forms;
 
-namespace WindowsFormsApp2
+namespace WindowsFormsApp2.Tools
 {
     public class RectangleTool : ToolStripButton, ITool
     {
         private ICanvas canvas;
-        //public string Name { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
         private Rectangle rectangle;
-
-        //public Cursor Cursor;
 
         public Cursor Cursor
         {
@@ -36,21 +33,17 @@ namespace WindowsFormsApp2
         {            
             this.Name = "Rectangle tool";
             this.ToolTipText = "Rectangle tool";
-            //this.CheckOnClick = true;
             this.Image = IconSet.rectangle;
             this.CheckOnClick = true;
         }
 
         public void ToolMouseDown(object sender, MouseEventArgs e)
         {
-            if(e.Button == MouseButtons.Left)
+            if (e.Button == MouseButtons.Left)
             {
-                MessageBox.Show("eyyy");
-
-                //tadinya yang rectangle dengan 2 parameter ini dikomen
                 rectangle = new Rectangle(e.X, e.Y);
-                //rectangle = new Rectangle(e.X, e.Y, 100, 100);
                 this.canvas.AddDrawingObject(this.rectangle);
+
             }
         }
 
@@ -74,18 +67,7 @@ namespace WindowsFormsApp2
 
         public void ToolMouseUp(object sender, MouseEventArgs e)
         {
-            //rectangle.ChangeState(StaticState.GetInstance());
-            if (rectangle != null)
-            {
-                if (e.Button == MouseButtons.Left)
-                {
-                    this.rectangle.Select();
-                }
-                else if (e.Button == MouseButtons.Right)
-                {
-                    canvas.RemoveDrawingObject(this.rectangle);
-                }
-            }
+            rectangle.ChangeState(StaticState.GetInstance());
         }
 
         public void ToolMouseDoubleClick(object sender, MouseEventArgs e)

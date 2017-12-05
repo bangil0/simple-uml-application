@@ -4,41 +4,24 @@ using System.Windows.Forms;
 
 namespace WindowsFormsApp2
 {
-    public class DefaultToolbox: ToolStrip, IToolbox
+    public class DefaultToolbox : ToolStrip, IToolbox
     {
-        //public ITool ActiveTool { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+        private ITool activeTool;
 
-        ITool IToolbox.ActiveTool
+        public ITool ActiveTool
         {
             get
             {
-                throw new NotImplementedException();
+                return this.activeTool;
             }
 
             set
             {
-                throw new NotImplementedException();
+                this.activeTool = value;
             }
         }
 
-        event ToolSelectedEventHandler ToolSelected;
-
-        private ITool activeTool;
-
-        event ToolSelectedEventHandler IToolbox.ToolSelected
-        {
-            add
-            {
-                throw new NotImplementedException();
-            }
-
-            remove
-            {
-                throw new NotImplementedException();
-            }
-        }
-
-        //public event ToolSelectedEventHandler ToolSelected;
+        public event ToolSelectedEventHandler ToolSelected;
 
         public void AddSeparator()
         {
@@ -53,7 +36,7 @@ namespace WindowsFormsApp2
 
                 if (toggleButton.CheckOnClick)
                 {
-                    //toggleButton.CheckedChanged += toggleButton_CheckedChanged;
+                    toggleButton.CheckedChanged += toggleButton_CheckedChanged;
                 }
 
                 this.Items.Add(toggleButton);
@@ -78,10 +61,7 @@ namespace WindowsFormsApp2
                         this.activeTool = (ITool)button;
                         Debug.WriteLine(this.activeTool.Name + " is activated.");
 
-                        if (ToolSelected != null)
-                        {
-                            ToolSelected(this.activeTool);
-                        }
+                        ToolSelected?.Invoke(this.activeTool);
 
                         UncheckInactiveToggleButtons();
                     }
@@ -106,26 +86,7 @@ namespace WindowsFormsApp2
                 }
             }
         }
-
-        /*
-        public void AddTool(ITool tool)
-        {
-           Debug.WriteLine(tool.Name + " is added into toolbox.");
-
-           if (tool is ToolStripButton)
-           {
-               ToolStripButton toggleButton = (ToolStripButton)tool;
-
-               if (toggleButton.CheckOnClick)
-               {
-                   toggleButton.CheckedChanged += toggleButton_CheckedChanged;
-               }
-
-               this.Items.Add(toggleButton);
-           }
-        }
-        */
-        /*
+        
         public void Register(IPlugin plugin)
         {
             if (plugin != null)
@@ -142,7 +103,7 @@ namespace WindowsFormsApp2
             }
 
         }
-
+        /*
         public void RemoveTool(ITool tool)
         {
             foreach (ToolStripItem i in this.Items)
@@ -155,9 +116,7 @@ namespace WindowsFormsApp2
                     }
                 }
             }
-        }
-
-        
+        }       
         */
     }
 }

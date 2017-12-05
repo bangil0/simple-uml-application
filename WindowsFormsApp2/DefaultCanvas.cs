@@ -76,6 +76,7 @@ namespace WindowsFormsApp2
 
         protected override bool ProcessCmdKey(ref Message msg, Keys keyData)
         {
+            /*
             const int WM_KEYDOWN = 0x100;
             const int WM_SYSKEYDOWN = 0x104;
 
@@ -85,17 +86,18 @@ namespace WindowsFormsApp2
                 {
                     case Keys.Control | Keys.G:
                         Console.WriteLine("<CTRL> + G Captured");
-                        /*
+                        
                         if (this.activeTool != null)
                         {
                             this.activeTool.ToolHotKeysDown(this, Keys.Control | Keys.G);
                             this.Repaint();
-                        }*/
+                        }
                         break;
                 }
             }
-
+            */
             return base.ProcessCmdKey(ref msg, keyData);
+            
         }
 
         private void DefaultCanvas_MouseDoubleClick(object sender, MouseEventArgs e)
@@ -109,8 +111,7 @@ namespace WindowsFormsApp2
         }
 
         private void DefaultCanvas_MouseDown(object sender, MouseEventArgs e)
-        {
-            
+        {           
             if (this.activeTool != null)
             {
                 this.activeTool.ToolMouseDown(sender, e);
