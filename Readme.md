@@ -1,7 +1,7 @@
 ## To-do
 ### Belum dikerjakan
 - [ ] implementasi composite pattern
-- [ ] implementasi memento pattern
+- [x] implementasi memento pattern --ma
 
 ### Sedang dikerjakan
 - [x] buat text --n
