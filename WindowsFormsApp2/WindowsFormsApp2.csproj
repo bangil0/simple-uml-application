@@ -46,6 +46,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Actor.cs" />
     <Compile Include="DefaultCanvas.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -78,9 +79,15 @@
     <Compile Include="EllipseTool.cs">
       <SubType>Component</SubType>
     </Compile>
+<<<<<<< HEAD
+    <Compile Include="ActorTool.cs">
+      <SubType>Component</SubType>
+    </Compile>
+=======
     <Compile Include="MemCaretaker.cs" />
     <Compile Include="MemMemento.cs" />
     <Compile Include="MemOriginator.cs" />
+>>>>>>> 4ff55657aca4e5b4cc5c42c6e2555ec4b46c9428
     <Compile Include="ObjectShape.cs" />
     <Compile Include="Panel1.cs">
       <SubType>Component</SubType>
@@ -99,6 +106,7 @@
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="StaticState.cs" />
+    <Compile Include="Text.cs" />
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>

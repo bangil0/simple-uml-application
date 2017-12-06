@@ -1,15 +1,13 @@
 ﻿using System;
-using System.Diagnostics;
 using System.Windows.Forms;
 using WindowsFormsApp2.State;
 
 namespace WindowsFormsApp2.Tools
 {
-    public class RectangleTool : ToolStripButton, ITool
+    public class ActorTool : ToolStripButton, ITool
     {
         private ICanvas canvas;
-        private Rectangle rectangle;
-        private ObjectShape selectedObject;
+        private Actor actor;
 
         public Cursor Cursor
         {
@@ -32,11 +30,11 @@ namespace WindowsFormsApp2.Tools
             }
         }
 
-        public RectangleTool()
-        {            
-            this.Name = "Rectangle tool";
-            this.ToolTipText = "Rectangle tool";
-            this.Image = IconSet.rectangle;
+        public ActorTool()
+        {
+            this.Name = "Actor tool";
+            this.ToolTipText = "Actor";
+            this.Image = IconSet.actor;
             this.CheckOnClick = true;
         }
 
@@ -44,8 +42,8 @@ namespace WindowsFormsApp2.Tools
         {
             if (e.Button == MouseButtons.Left)
             {
-                rectangle = new Rectangle(e.X, e.Y);
-                this.canvas.AddDrawingObject(this.rectangle);
+                actor = new Actor(e.X, e.Y);
+                this.canvas.AddDrawingObject(this.actor);
 
             }
         }
@@ -54,15 +52,15 @@ namespace WindowsFormsApp2.Tools
         {
             if (e.Button == MouseButtons.Left)
             {
-                if (this.rectangle != null)
+                if (this.actor != null)
                 {
-                    int width = e.X - this.rectangle.X;
-                    int height = e.Y - this.rectangle.Y;
+                    int width = e.X - this.actor.X;
+                    int height = e.Y - this.actor.Y;
 
                     if (width > 0 && height > 0)
                     {
-                        this.rectangle.Width = width;
-                        this.rectangle.Height = height;
+                        this.actor.Width = width;
+                        this.actor.Height = height;
                     }
                 }
             }
@@ -70,12 +68,11 @@ namespace WindowsFormsApp2.Tools
 
         public void ToolMouseUp(object sender, MouseEventArgs e)
         {
-            rectangle.ChangeState(EditState.GetInstance());
+            actor.ChangeState(EditState.GetInstance());
         }
 
         public void ToolMouseDoubleClick(object sender, MouseEventArgs e)
         {
-            Text text = new WindowsFormsApp2.Text();
 
         }
 

@@ -6,6 +6,18 @@ using System.Drawing.Drawing2D;
 
 namespace WindowsFormsApp2
 {
+<<<<<<< HEAD
+    public class Ellipse : ObjectShape
+    {
+        public override bool Add(ObjectShape obj)
+        {
+            throw new NotImplementedException();
+        }
+
+        public override bool Remove(ObjectShape obj)
+        {
+            throw new NotImplementedException();
+=======
     class Ellipse : ObjectShape
     {
         public int X { get; set; }
@@ -33,10 +45,19 @@ namespace WindowsFormsApp2
         {
             this.Width = width;
             this.Height = height;
+>>>>>>> 4ff55657aca4e5b4cc5c42c6e2555ec4b46c9428
         }
 
         public override bool Intersect(int xTest, int yTest)
         {
+<<<<<<< HEAD
+            throw new NotImplementedException();
+        }
+
+        public override void Translate(int x, int y, int xAmount, int yAmount)
+        {
+            throw new NotImplementedException();
+=======
             if ((xTest >= X && xTest <= X + Width) && (yTest >= Y && yTest <= Y + Height))
             {
                 Debug.WriteLine("Object " + ID + " is selected.");
@@ -70,10 +91,26 @@ namespace WindowsFormsApp2
                 obj.RenderOnEditingView();
             }
 
+>>>>>>> 4ff55657aca4e5b4cc5c42c6e2555ec4b46c9428
         }
 
         public override void RenderOnPreview()
         {
+<<<<<<< HEAD
+            throw new NotImplementedException();
+        }
+
+        public override void RenderOnEditingView()
+        {
+            throw new NotImplementedException();
+        }
+
+        public override void RenderOnStaticView()
+        {
+            throw new NotImplementedException();
+        }
+
+=======
             this.pen.Color = Color.Red;
             this.pen.DashStyle = DashStyle.DashDot;
             GetGraphics().DrawEllipse(this.pen, X, Y, Width, Height);
@@ -109,6 +146,7 @@ namespace WindowsFormsApp2
                 obj.Translate(x, y, xAmount, yAmount);
             }
         }
+>>>>>>> 4ff55657aca4e5b4cc5c42c6e2555ec4b46c9428
     }
 }
 
