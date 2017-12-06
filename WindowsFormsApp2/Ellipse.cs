@@ -101,7 +101,7 @@ namespace WindowsFormsApp2
 
         public override void Translate(int x, int y, int xAmount, int yAmount)
         {
-            throw new NotImplementedException();
+           
         }
     }
 }

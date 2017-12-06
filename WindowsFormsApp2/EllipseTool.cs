@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using WindowsFormsApp2.State;
 
@@ -32,7 +28,7 @@ namespace WindowsFormsApp2
 
             set
             {
-
+                this.canvas = value;
             }
         }
         public EllipseTool()
@@ -60,7 +56,7 @@ namespace WindowsFormsApp2
         {
             if (e.Button == MouseButtons.Left)
             {
-                MessageBox.Show("ellipse");
+                
                 ellipse = new Ellipse(e.X, e.Y);
                 this.canvas.AddDrawingObject(ellipse);
             }
