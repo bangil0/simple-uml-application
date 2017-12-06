@@ -101,7 +101,13 @@ namespace WindowsFormsApp2
 
         public override void Translate(int x, int y, int xAmount, int yAmount)
         {
-           
+            this.X += xAmount;
+            this.Y += yAmount;
+
+            foreach (ObjectShape obj in drawingObjects)
+            {
+                obj.Translate(x, y, xAmount, yAmount);
+            }
         }
     }
 }
