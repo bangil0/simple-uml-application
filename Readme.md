@@ -5,6 +5,7 @@
 
 ### Sedang dikerjakan
 - [x] buat text --n
+- [x] Hapus object --ma
 
 ### Sudah dikerjakan
 - [x] implementasi state pattern (preview, edit, static state)
