@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Windows.Forms;
+using WindowsFormsApp2.State;
 
 namespace WindowsFormsApp2.Tools
 {
@@ -67,7 +68,7 @@ namespace WindowsFormsApp2.Tools
 
         public void ToolMouseUp(object sender, MouseEventArgs e)
         {
-            rectangle.ChangeState(StaticState.GetInstance());
+            rectangle.ChangeState(EditState.GetInstance());
         }
 
         public void ToolMouseDoubleClick(object sender, MouseEventArgs e)

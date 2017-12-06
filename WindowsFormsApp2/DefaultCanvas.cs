@@ -192,6 +192,7 @@ namespace WindowsFormsApp2
         public ObjectShape SelectObjectAt(int x, int y)
         {
             ObjectShape obj = GetObjectAt(x, y);
+
             if (obj != null)
             {
                 obj.Select();
@@ -220,12 +221,26 @@ namespace WindowsFormsApp2
 
         ObjectShape ICanvas.GetObjectAt(int x, int y)
         {
-            throw new NotImplementedException();
+            foreach (ObjectShape obj in objectShapes)
+            {
+                if (obj.Intersect(x, y))
+                {
+                    return obj;
+                }
+            }
+            return null;
         }
 
         ObjectShape ICanvas.SelectObjectAt(int x, int y)
         {
-            throw new NotImplementedException();
+            ObjectShape obj = GetObjectAt(x, y);
+
+            if (obj != null)
+            {
+                obj.Select();
+            }
+
+            return obj;
         }
     }
 }

@@ -40,7 +40,7 @@ namespace WindowsFormsApp2
         public void AddCanvas(ICanvas canvas)
         {
             canvases.Add(canvas);
-            TabPage tabPage = new TabPage(canvas.Name);
+            TabPage tabPage = new TabPage("Page");
             tabPage.Controls.Add((Control)canvas);
             this.Controls.Add(tabPage);
             this.SelectedTab = tabPage;
@@ -60,7 +60,6 @@ namespace WindowsFormsApp2
         public void RemoveSelectedCanvas()
         {
             //TabPage selectedTab = this.SelectedTab;
-
         }
 
         public void SelectCanvas(ICanvas canvas)

@@ -3,11 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using WindowsFormsApp2.State;
 
-namespace WindowsFormsApp2
+namespace WindowsFormsApp2.State
 {
-    public class StaticState : DrawingState
+    public class EditState : DrawingState
     {
         private static DrawingState instance;
 
@@ -15,19 +14,19 @@ namespace WindowsFormsApp2
         {
             if (instance == null)
             {
-                instance = new StaticState();
+                instance = new EditState();
             }
             return instance;
         }
 
         public override void Draw(ObjectShape obj)
         {
-            obj.RenderOnStaticView();
+            obj.RenderOnEditingView();
         }
 
-        public override void Select(ObjectShape obj)
+        public override void Deselect(ObjectShape obj)
         {
-            obj.ChangeState(EditState.GetInstance());
+            obj.ChangeState(StaticState.GetInstance());
         }
     }
 }

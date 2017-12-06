@@ -61,6 +61,7 @@ namespace WindowsFormsApp2
             this.toolbox.AddTool(new LineTool());
             this.toolbox.AddTool(new RectangleTool());
             this.toolbox.AddTool(new EllipseTool());
+            this.toolbox.AddTool(new SelectionTool());
            
             this.toolbox.ToolSelected += Toolbox_ToolSelected;
 
