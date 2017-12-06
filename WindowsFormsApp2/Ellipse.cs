@@ -37,7 +37,12 @@ namespace WindowsFormsApp2
 
         public override bool Intersect(int xTest, int yTest)
         {
-            throw new NotImplementedException();
+            if ((xTest >= X && xTest <= X + Width) && (yTest >= Y && yTest <= Y + Height))
+            {
+                Debug.WriteLine("Object " + ID + " is selected.");
+                return true;
+            }
+            return false;
         }
 
         public override void RenderOnStaticView()
