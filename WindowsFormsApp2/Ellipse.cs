@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace WindowsFormsApp2
 {
-    class Ellipse
+    public class Ellipse : ObjectShape
     {
+        private 
     }
 }
