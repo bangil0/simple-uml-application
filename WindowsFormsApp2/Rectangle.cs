@@ -110,17 +110,5 @@ namespace WindowsFormsApp2
 
             return true;
         }
-
-        /*
-        public override bool Add(ObjectShape obj)
-        {
-            throw new NotImplementedException();
-        }
-
-        public override bool Remove(ObjectShape obj)
-        {
-            throw new NotImplementedException();
-        }
-        */
     }
 }
