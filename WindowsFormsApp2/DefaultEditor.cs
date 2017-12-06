@@ -8,9 +8,8 @@ namespace WindowsFormsApp2
     {
         private List<ICanvas> canvases;
         private ICanvas selectedCanvas;
-
         private IToolbox toolbox;
-        
+
         public IToolbox Toolbox
         {
             get
@@ -41,6 +40,11 @@ namespace WindowsFormsApp2
         public void AddCanvas(ICanvas canvas)
         {
             canvases.Add(canvas);
+            TabPage tabPage = new TabPage("Page");
+            tabPage.Controls.Add((Control)canvas);
+            this.Controls.Add(tabPage);
+            this.SelectedTab = tabPage;
+            this.selectedCanvas = canvas;
         }
 
         public ICanvas GetSelectedCanvas()
@@ -55,7 +59,7 @@ namespace WindowsFormsApp2
 
         public void RemoveSelectedCanvas()
         {
-            //TabPage selectedTab = this.SelectedTab;
+            
         }
 
         public void SelectCanvas(ICanvas canvas)

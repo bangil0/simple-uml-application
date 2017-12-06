@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Windows.Forms;
+using WindowsFormsApp2.State;
 
 namespace WindowsFormsApp2
 {
@@ -60,6 +61,8 @@ namespace WindowsFormsApp2
 
         public void ToolMouseUp(object sender, MouseEventArgs e)
         {
+            lineSegment.ChangeState(EditState.GetInstance());
+
             if (this.lineSegment != null)
             {
                 lineSegment.Endpoint = new System.Drawing.Point(e.X, e.Y);

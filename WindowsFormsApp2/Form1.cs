@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using WindowsFormsApp2.Tools;
 
 namespace WindowsFormsApp2
 {
@@ -15,18 +16,14 @@ namespace WindowsFormsApp2
     {
         private IEditor editor;
         private IToolbox toolbox;
-        //private IPlugin[] plugins;
-        //private IToolbar toolbar;
-        //private IMenubar menubar;
         
-
         public Form1()
         {
             InitializeComponent();
 
             InitUI();
         }
-
+        
         private void InitUI()
         {
             Debug.WriteLine("Initializing UI objects.");
@@ -45,35 +42,25 @@ namespace WindowsFormsApp2
             #region Toolbox
 
             // Initializing toolbox
-            
-            Button button = new Button();
-            
+                        
             Debug.WriteLine("Loading toolbox...");
             this.toolbox = new DefaultToolbox();
-            this.toolStripContainer1.LeftToolStripPanel.Controls.Add((Control)this.toolbox);
+            this.toolStripContainer1.TopToolStripPanel.Controls.Add((Control)this.toolbox);
             this.editor.Toolbox = toolbox;
 
             #endregion
-
             
             #region Tools
 
             // Initializing tools
             Debug.WriteLine("Loading tools...");
-            this.toolbox.AddSeparator();
+
             this.toolbox.AddTool(new LineTool());
             this.toolbox.AddTool(new RectangleTool());
             this.toolbox.AddTool(new EllipseTool());
-            /*
-            if (plugins != null)
-            {
-                for (int i = 0; i < this.plugins.Length; i++)
-                {
-                    this.toolbox.Register(plugins[i]);
-                }
-            }*/
-
-            //this.toolbox.ToolSelected += Toolbox_ToolSelected;
+            this.toolbox.AddTool(new SelectionTool());
+           
+            this.toolbox.ToolSelected += Toolbox_ToolSelected;
 
             #endregion
         }

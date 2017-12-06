@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Diagnostics;
 using System.Drawing;
+using WindowsFormsApp2.State;
 
 namespace WindowsFormsApp2
 {

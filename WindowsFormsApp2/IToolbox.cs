@@ -11,6 +11,7 @@ namespace WindowsFormsApp2
     public interface IToolbox
     {
         event ToolSelectedEventHandler ToolSelected;
+        void Register(IPlugin plugin);
         void AddTool(ITool tool);
         void RemoveTool(ITool tool);
         void AddSeparator();
