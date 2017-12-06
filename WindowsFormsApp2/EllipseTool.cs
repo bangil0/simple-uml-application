@@ -82,16 +82,11 @@ namespace WindowsFormsApp2
 
         public void ToolMouseUp(object sender, MouseEventArgs e)
         {
-            //ellipse.ChangeState(StaticState.GetInstance());
             if (ellipse != null)
             {
                 if (e.Button == MouseButtons.Left)
                 {
-                    this.ellipse.Select();
-                }
-                else if (e.Button == MouseButtons.Right)
-                {
-                    canvas.RemoveDrawingObject(this.ellipse);
+                    this.ellipse.ChangeState(EditState.GetInstance());
                 }
             }
 
