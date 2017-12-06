@@ -78,6 +78,9 @@
     <Compile Include="EllipseTool.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="MemCaretaker.cs" />
+    <Compile Include="MemMemento.cs" />
+    <Compile Include="MemOriginator.cs" />
     <Compile Include="ObjectShape.cs" />
     <Compile Include="Panel1.cs">
       <SubType>Component</SubType>
