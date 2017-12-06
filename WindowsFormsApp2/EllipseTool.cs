@@ -1,15 +1,14 @@
 ﻿using System;
 using System.Windows.Forms;
+using WindowsFormsApp2.State;
 
 namespace WindowsFormsApp2
 {
     public class EllipseTool : ToolStripButton, ITool
     {
         private ICanvas canvas;
-        //public string Name { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-        private Rectangle rectangle;
+        private Ellipse ellipse;
 
-        //public Cursor Cursor;
 
         public Cursor Cursor
         {
@@ -23,6 +22,7 @@ namespace WindowsFormsApp2
         {
             get
             {
+
                 return this.canvas;
             }
 
@@ -31,26 +31,34 @@ namespace WindowsFormsApp2
                 this.canvas = value;
             }
         }
-
         public EllipseTool()
         {
-            this.Name = "Rectangle tool";
-            this.ToolTipText = "Rectangle tool";
-            //this.CheckOnClick = true;
-            this.Image = IconSet.usecase;
+            this.Name = "Ellipse tool";
+            this.ToolTipText = "Ellipse";
             this.CheckOnClick = true;
+            this.Image = IconSet.usecase;
+            }
+
+        public void ToolHotKeysDown(object sender, Keys e)
+        {
+            throw new NotImplementedException();
         }
 
+        public void ToolKeyDown(object sender, KeyEventArgs e)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void ToolKeyUp(object sender, KeyEventArgs e)
+        {
+        }
         public void ToolMouseDown(object sender, MouseEventArgs e)
         {
             if (e.Button == MouseButtons.Left)
             {
-                MessageBox.Show("eyyy");
-
-                //tadinya yang rectangle dengan 2 parameter ini dikomen
-                rectangle = new Rectangle(e.X, e.Y);
-                //rectangle = new Rectangle(e.X, e.Y, 100, 100);
-                this.canvas.AddDrawingObject(this.rectangle);
+                
+                ellipse = new Ellipse(e.X, e.Y);
+                this.canvas.AddDrawingObject(ellipse);
             }
         }
 
@@ -58,15 +66,15 @@ namespace WindowsFormsApp2
         {
             if (e.Button == MouseButtons.Left)
             {
-                if (this.rectangle != null)
+                if (this.ellipse != null)
                 {
-                    int width = e.X - this.rectangle.X;
-                    int height = e.Y - this.rectangle.Y;
+                    int width = e.X - this.ellipse.X;
+                    int height = e.Y - this.ellipse.Y;
 
                     if (width > 0 && height > 0)
                     {
-                        this.rectangle.Width = width;
-                        this.rectangle.Height = height;
+                        this.ellipse.Width = width;
+                        this.ellipse.Height = height;
                     }
                 }
             }
@@ -74,38 +82,23 @@ namespace WindowsFormsApp2
 
         public void ToolMouseUp(object sender, MouseEventArgs e)
         {
-            //rectangle.ChangeState(StaticState.GetInstance());
-            if (rectangle != null)
+            if (ellipse != null)
             {
                 if (e.Button == MouseButtons.Left)
                 {
-                    this.rectangle.Select();
-                }
-                else if (e.Button == MouseButtons.Right)
-                {
-                    canvas.RemoveDrawingObject(this.rectangle);
+                    this.ellipse.ChangeState(EditState.GetInstance());
                 }
             }
+
         }
 
         public void ToolMouseDoubleClick(object sender, MouseEventArgs e)
         {
-
+            throw new NotImplementedException();
         }
 
-        public void ToolHotKeysDown(object sender, Keys e)
-        {
-
-        }
-
-        public void ToolKeyDown(object sender, KeyEventArgs e)
-        {
-
-        }
-
-        public void ToolKeyUp(object sender, KeyEventArgs e)
-        {
-
-        }
     }
+
+
+
 }
