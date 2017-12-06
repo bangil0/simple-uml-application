@@ -72,7 +72,6 @@
     </Compile>
     <Compile Include="IEditor.cs" />
     <Compile Include="IPlugin.cs" />
-    <Compile Include="IPluginHost.cs" />
     <Compile Include="ITool.cs" />
     <Compile Include="IToolbox.cs" />
     <Compile Include="LineSegment.cs" />

@@ -50,6 +50,7 @@ namespace WindowsFormsApp2
                     obj.Deselect();
                 }
             }
+
             if (this.activeTool != null)
             {
                 this.activeTool.ToolMouseDown(sender, e);
