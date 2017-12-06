@@ -8,9 +8,10 @@ namespace WindowsFormsApp2
 {
     public delegate void ToolSelectedEventHandler(ITool tool);
 
-    public interface IToolbox : IPluginHost
+    public interface IToolbox
     {
         event ToolSelectedEventHandler ToolSelected;
+        void Register(IPlugin plugin);
         void AddTool(ITool tool);
         void RemoveTool(ITool tool);
         void AddSeparator();

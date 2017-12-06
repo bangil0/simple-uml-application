@@ -103,20 +103,5 @@ namespace WindowsFormsApp2
             }
 
         }
-        /*
-        public void RemoveTool(ITool tool)
-        {
-            foreach (ToolStripItem i in this.Items)
-            {
-                if (i is ITool)
-                {
-                    if (i.Equals(tool))
-                    {
-                        this.Items.Remove(i);
-                    }
-                }
-            }
-        }       
-        */
     }
 }

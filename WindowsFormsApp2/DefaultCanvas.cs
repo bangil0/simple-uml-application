@@ -28,78 +28,9 @@ namespace WindowsFormsApp2
             this.MouseDown += DefaultCanvas_MouseDown;
             this.MouseMove += DefaultCanvas_MouseMove;
             this.MouseUp += DefaultCanvas_MouseUp;
-            this.MouseDoubleClick += DefaultCanvas_MouseDoubleClick;
-            this.KeyDown += DefaultCanvas_KeyDown;
-            this.KeyUp += DefaultCanvas_KeyUp;
-            this.PreviewKeyDown += DefaultCanvas_PreviewKeyDown;
+            this.MouseDoubleClick += DefaultCanvas_MouseDoubleClick;    
         }
-
-        private void DefaultCanvas_PreviewKeyDown(object sender, PreviewKeyDownEventArgs e)
-        {
-            switch (e.KeyCode)
-            {
-                case Keys.ControlKey:
-                    e.IsInputKey = true;
-                    break;
-                case Keys.Up:
-                    e.IsInputKey = true;
-                    break;
-                case Keys.Down:
-                    e.IsInputKey = true;
-                    break;
-                case Keys.Left:
-                    e.IsInputKey = true;
-                    break;
-                case Keys.Right:
-                    e.IsInputKey = true;
-                    break;
-            }
-        }
-
-        private void DefaultCanvas_KeyUp(object sender, KeyEventArgs e)
-        {
-            /*
-            if (this.activeTool != null)
-            {
-                this.activeTool.ToolKeyUp(sender, e);
-            }*/
-        }
-
-        private void DefaultCanvas_KeyDown(object sender, KeyEventArgs e)
-        {
-            /*
-            if (this.activeTool != null)
-            {
-                this.activeTool.ToolKeyDown(sender, e);
-            }*/
-        }
-
-        protected override bool ProcessCmdKey(ref Message msg, Keys keyData)
-        {
-            /*
-            const int WM_KEYDOWN = 0x100;
-            const int WM_SYSKEYDOWN = 0x104;
-
-            if ((msg.Msg == WM_KEYDOWN) || (msg.Msg == WM_SYSKEYDOWN))
-            {
-                switch (keyData)
-                {
-                    case Keys.Control | Keys.G:
-                        Console.WriteLine("<CTRL> + G Captured");
-                        
-                        if (this.activeTool != null)
-                        {
-                            this.activeTool.ToolHotKeysDown(this, Keys.Control | Keys.G);
-                            this.Repaint();
-                        }
-                        break;
-                }
-            }
-            */
-            return base.ProcessCmdKey(ref msg, keyData);
-            
-        }
-
+       
         private void DefaultCanvas_MouseDoubleClick(object sender, MouseEventArgs e)
         {
             /*
@@ -111,7 +42,14 @@ namespace WindowsFormsApp2
         }
 
         private void DefaultCanvas_MouseDown(object sender, MouseEventArgs e)
-        {           
+        {
+            if (objectShapes.Count > 0)
+            {
+                foreach(ObjectShape obj in objectShapes)
+                {
+                    obj.Deselect();
+                }
+            }
             if (this.activeTool != null)
             {
                 this.activeTool.ToolMouseDown(sender, e);
@@ -208,16 +146,6 @@ namespace WindowsFormsApp2
                 drawObj.Deselect();
             }
         }
-        /*
-        public void AddDrawingObject(ObjectShape drawingObject)
-        {
-            throw new NotImplementedException();
-        }
-
-        public void RemoveDrawingObject(ObjectShape drawingObject)
-        {
-            throw new NotImplementedException();
-        }*/
 
         ObjectShape ICanvas.GetObjectAt(int x, int y)
         {

@@ -16,9 +16,6 @@ namespace WindowsFormsApp2
     {
         private IEditor editor;
         private IToolbox toolbox;
-        //private IPlugin[] plugins;
-        //private IToolbar toolbar;
-        //private IMenubar menubar;
         
         public Form1()
         {
