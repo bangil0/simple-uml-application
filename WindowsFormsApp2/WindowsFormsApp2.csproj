@@ -46,6 +46,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Actor.cs" />
     <Compile Include="DefaultCanvas.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -72,11 +73,13 @@
     </Compile>
     <Compile Include="IEditor.cs" />
     <Compile Include="IPlugin.cs" />
-    <Compile Include="IPluginHost.cs" />
     <Compile Include="ITool.cs" />
     <Compile Include="IToolbox.cs" />
     <Compile Include="LineSegment.cs" />
     <Compile Include="EllipseTool.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ActorTool.cs">
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="ObjectShape.cs" />
@@ -97,6 +100,7 @@
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="StaticState.cs" />
+    <Compile Include="Text.cs" />
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
