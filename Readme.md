@@ -5,7 +5,6 @@
 
 ### Sedang dikerjakan
 - [x] buat text --n
-- [x] tambahin menubar untuk opsi undo - redo --s
 
 ### Sudah dikerjakan
 - [x] implementasi state pattern (preview, edit, static state)
@@ -15,6 +14,7 @@
 - [x] tambahin toolbar untuk milih obyek apa yang digambar
 - [x] buat supaya obyek di kanvas bisa dipindah
 - [x] buat ellipse
+- [x] tambahin menubar untuk opsi undo - redo
 
 # Use Case Diagramming Tool
 Aplikasi ini merupakan tools untuk membuat diagram <b>Use Case</b>. Fitur aplikasi ini adalah dapat memilih komponen diagram use case dengan cara drag and drop.
