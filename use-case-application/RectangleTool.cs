@@ -9,7 +9,8 @@ namespace WindowsFormsApp2.Tools
     {
         private ICanvas canvas;
         private Rectangle rectangle;
-        private ObjectShape selectedObject;
+        int initX;
+        int initY;
 
         public Cursor Cursor
         {
@@ -44,9 +45,12 @@ namespace WindowsFormsApp2.Tools
         {
             if (e.Button == MouseButtons.Left)
             {
-                rectangle = new Rectangle(e.X, e.Y);
-                this.canvas.AddDrawingObject(this.rectangle);
+                initX = e.X;
+                initY = e.Y;
 
+                rectangle = new Rectangle(e.X, e.Y);
+
+                this.canvas.AddDrawingObject(this.rectangle);
             }
         }
 
@@ -56,13 +60,37 @@ namespace WindowsFormsApp2.Tools
             {
                 if (this.rectangle != null)
                 {
-                    int width = e.X - this.rectangle.X;
-                    int height = e.Y - this.rectangle.Y;
-
-                    if (width > 0 && height > 0)
+                    if (e.X > initX && e.Y > initY)
                     {
-                        this.rectangle.Width = width;
-                        this.rectangle.Height = height;
+                        rectangle.Width = e.X - rectangle.X;
+                        rectangle.Height = e.Y - rectangle.Y;
+                    }
+
+                    if (e.X < initX && e.Y > initY)
+                    {
+                        rectangle.X = e.X;
+                        rectangle.Y = initY;
+
+                        rectangle.Width = initX - rectangle.X;
+                        rectangle.Height = e.Y - rectangle.Y;
+                    }
+
+                    if(e.X > initX && e.Y < initY)
+                    {
+                        rectangle.X = initX;
+                        rectangle.Y = e.Y;
+
+                        rectangle.Width = e.X - rectangle.X;
+                        rectangle.Height = initY - rectangle.Y;
+                    }
+
+                    if(e.X < initX && e.Y < initY)
+                    {
+                        rectangle.X = e.X;
+                        rectangle.Y = e.Y;
+
+                        rectangle.Width = initX - rectangle.X;
+                        rectangle.Height = initY - rectangle.Y;
                     }
                 }
             }
