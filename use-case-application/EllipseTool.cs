@@ -8,7 +8,8 @@ namespace WindowsFormsApp2
     {
         private ICanvas canvas;
         private Ellipse ellipse;
-
+        int initX;
+        int initY;
 
         public Cursor Cursor
         {
@@ -56,7 +57,9 @@ namespace WindowsFormsApp2
         {
             if (e.Button == MouseButtons.Left)
             {
-                
+                initX = e.X;
+                initY = e.Y;
+
                 ellipse = new Ellipse(e.X, e.Y);
                 this.canvas.AddDrawingObject(ellipse);
             }
@@ -68,13 +71,37 @@ namespace WindowsFormsApp2
             {
                 if (this.ellipse != null)
                 {
-                    int width = e.X - this.ellipse.X;
-                    int height = e.Y - this.ellipse.Y;
-
-                    if (width > 0 && height > 0)
+                    if (e.X > initX && e.Y > initY)
                     {
-                        this.ellipse.Width = width;
-                        this.ellipse.Height = height;
+                        ellipse.Width = e.X - ellipse.X;
+                        ellipse.Height = e.Y - ellipse.Y;
+                    }
+
+                    if (e.X < initX && e.Y > initY)
+                    {
+                        ellipse.X = e.X;
+                        ellipse.Y = initY;
+
+                        ellipse.Width = initX - ellipse.X;
+                        ellipse.Height = e.Y - ellipse.Y;
+                    }
+
+                    if (e.X > initX && e.Y < initY)
+                    {
+                        ellipse.X = initX;
+                        ellipse.Y = e.Y;
+
+                        ellipse.Width = e.X - ellipse.X;
+                        ellipse.Height = initY - ellipse.Y;
+                    }
+
+                    if (e.X < initX && e.Y < initY)
+                    {
+                        ellipse.X = e.X;
+                        ellipse.Y = e.Y;
+
+                        ellipse.Width = initX - ellipse.X;
+                        ellipse.Height = initY - ellipse.Y;
                     }
                 }
             }
