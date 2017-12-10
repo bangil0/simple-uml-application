@@ -1,11 +1,13 @@
 ## To-do
 ### Belum dikerjakan
 - [ ] implementasi composite pattern
-- [x] implementasi memento pattern --ma
+- [ ] buat obyek bisa diresize
 
 ### Sedang dikerjakan
 - [x] buat text --n
 - [x] Hapus object --ma
+- [x] implementasi memento pattern --ma
+- [ ] buat obyek bisa digambar dari arah mana saja (bukan cuma dari kiri atas ke kanan bawah) --s
 
 ### Sudah dikerjakan
 - [x] implementasi state pattern (preview, edit, static state)
