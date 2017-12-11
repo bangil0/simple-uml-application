@@ -33,12 +33,12 @@ namespace WindowsFormsApp2
        
         private void DefaultCanvas_MouseDoubleClick(object sender, MouseEventArgs e)
         {
-            /*
+            
             if (this.activeTool != null)
             {
                 this.activeTool.ToolMouseDoubleClick(sender, e);
                 this.Repaint();
-            }*/
+            }
         }
 
         private void DefaultCanvas_MouseDown(object sender, MouseEventArgs e)
@@ -50,6 +50,7 @@ namespace WindowsFormsApp2
                     obj.Deselect();
                 }
             }
+
             if (this.activeTool != null)
             {
                 this.activeTool.ToolMouseDown(sender, e);

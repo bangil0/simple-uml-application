@@ -69,7 +69,6 @@ namespace WindowsFormsApp2
                 obj.SetGraphics(GetGraphics());
                 obj.RenderOnEditingView();
             }
-
         }
 
         public override void RenderOnPreview()

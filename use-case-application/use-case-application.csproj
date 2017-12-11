@@ -46,6 +46,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Actor.cs" />
+    <Compile Include="IUndoRedo.cs" />
     <Compile Include="DefaultCanvas.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -99,6 +101,7 @@
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="StaticState.cs" />
+    <Compile Include="Text.cs" />
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>

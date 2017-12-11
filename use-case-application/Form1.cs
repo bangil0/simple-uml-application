@@ -28,6 +28,12 @@ namespace WindowsFormsApp2
         {
             Debug.WriteLine("Initializing UI objects.");
 
+            this.Menu = new MainMenu();
+            MenuItem item = new MenuItem("Edit");
+            this.Menu.MenuItems.Add(item);
+            item.MenuItems.Add("Undo");
+            item.MenuItems.Add("Redo");
+
             #region Editor and Canvas
 
             Debug.WriteLine("Loading canvas...");
@@ -42,7 +48,7 @@ namespace WindowsFormsApp2
             #region Toolbox
 
             // Initializing toolbox
-                        
+
             Debug.WriteLine("Loading toolbox...");
             this.toolbox = new DefaultToolbox();
             this.toolStripContainer1.TopToolStripPanel.Controls.Add((Control)this.toolbox);
@@ -58,6 +64,7 @@ namespace WindowsFormsApp2
             this.toolbox.AddTool(new LineTool());
             this.toolbox.AddTool(new RectangleTool());
             this.toolbox.AddTool(new EllipseTool());
+            //this.toolbox.AddTool(new ActorTool());
             this.toolbox.AddTool(new SelectionTool());
            
             this.toolbox.ToolSelected += Toolbox_ToolSelected;

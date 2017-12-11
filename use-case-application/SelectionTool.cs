@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -80,7 +81,10 @@ namespace WindowsFormsApp2
 
         public void ToolMouseDoubleClick(object sender, MouseEventArgs e)
         {
-            
+            Text text = new Text();
+            text.Value = "Untitled";
+            canvas.AddDrawingObject(text);
+            Debug.WriteLine("selection tool double click");
         }
 
         public void ToolKeyUp(object sender, KeyEventArgs e)
