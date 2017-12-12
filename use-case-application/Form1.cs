@@ -20,7 +20,6 @@ namespace UseCaseApp
         public Form1()
         {
             InitializeComponent();
-
             InitUI();
         }
         
@@ -48,7 +47,6 @@ namespace UseCaseApp
             #region Toolbox
 
             // Initializing toolbox
-
             Debug.WriteLine("Loading toolbox...");
             this.toolbox = new DefaultToolbox();
             this.toolStripContainer1.TopToolStripPanel.Controls.Add((Control)this.toolbox);
@@ -66,7 +64,8 @@ namespace UseCaseApp
             this.toolbox.AddTool(new EllipseTool());
             //this.toolbox.AddTool(new ActorTool());
             this.toolbox.AddTool(new SelectionTool());
-           
+            this.toolbox.AddTool(new DeletionTool());
+
             this.toolbox.ToolSelected += Toolbox_ToolSelected;
 
             #endregion
@@ -80,6 +79,7 @@ namespace UseCaseApp
                 ICanvas canvas = this.editor.GetSelectedCanvas();
                 canvas.SetActiveTool(tool);
                 tool.TargetCanvas = canvas;
+                this.Cursor = tool.Cursor;
             }
         }
     } 

@@ -97,6 +97,9 @@
     <Compile Include="RectangleTool.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="DeletionTool.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="SelectionTool.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -108,6 +111,7 @@
     <EmbeddedResource Include="IconSet.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>IconSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -138,6 +142,7 @@
     <None Include="resources\relation.png" />
     <None Include="resources\actor.png" />
     <None Include="resources\cursor.png" />
+    <Content Include="resources\eraser.png" />
     <Content Include="resources\Image1.png" />
     <None Include="resources\rectangle.png" />
     <None Include="resources\rectangle_tool.png" />
