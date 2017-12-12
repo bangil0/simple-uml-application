@@ -8,16 +8,56 @@ namespace UseCaseApp
 {
     class MemCaretaker
     {
-        List<MemMemento> savedObject = new List<MemMemento>();
+        private Stack<MemMemento> UndoStack = new Stack<MemMemento>();
+        private Stack<MemMemento> RedoStack = new Stack<MemMemento>();
 
-        public void addMemento(MemMemento m)
+        public MemMemento getUndoMemento()
         {
-            savedObject.Add(m);
+            if (UndoStack.Count >= 2)
+            {
+                RedoStack.Push(UndoStack.Pop());
+                return UndoStack.Peek();
+            }
+            else
+                return null;
         }
-
-        public MemMemento getMemento (int index)
+        public MemMemento getRedoMemento()
         {
-            return savedObject[index];
+            if (RedoStack.Count != 0)
+            {
+                MemMemento m = RedoStack.Pop();
+                UndoStack.Push(m);
+                return m;
+            }
+            else
+                return null;
+        }
+        public void InsertMementoForUndoRedo(MemMemento memento)
+        {
+            if (memento != null)
+            {
+                UndoStack.Push(memento);
+                RedoStack.Clear();
+            }
+        }
+        public bool IsUndoPossible()
+        {
+            if (UndoStack.Count >= 2)
+            {
+                return true;
+            }
+            else
+                return false;
+
+        }
+        public bool IsRedoPossible()
+        {
+            if (RedoStack.Count != 0)
+            {
+                return true;
+            }
+            else
+                return false;
         }
     }
 }

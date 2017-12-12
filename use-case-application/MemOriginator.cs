@@ -8,14 +8,14 @@ namespace UseCaseApp
 {
     class MemOriginator
     {
-        private DefaultCanvas canvasState;
+        private ICanvas canvasState;
 
-        public MemOriginator(DefaultCanvas canvas)
+        public MemOriginator(ICanvas canvas)
         {
             canvasState = canvas;
         }
 
-        public void set(DefaultCanvas canvas)
+        public void set(ICanvas canvas)
         {
             this.canvasState = canvas;
         }

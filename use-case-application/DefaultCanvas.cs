@@ -10,10 +10,16 @@ namespace UseCaseApp
     {
         private ITool activeTool;
         private List<ObjectShape> objectShapes = new List<ObjectShape>();
-
+        private UndoRedo unDoObject;
+        
         public DefaultCanvas()
         {
             Init();
+        }
+
+        public void setUndoRedoObj(UndoRedo undoRedoObj)
+        {
+            this.unDoObject = undoRedoObj;
         }
 
         private void Init()
@@ -28,9 +34,9 @@ namespace UseCaseApp
             this.MouseDown += DefaultCanvas_MouseDown;
             this.MouseMove += DefaultCanvas_MouseMove;
             this.MouseUp += DefaultCanvas_MouseUp;
-            this.MouseDoubleClick += DefaultCanvas_MouseDoubleClick;    
+            this.MouseDoubleClick += DefaultCanvas_MouseDoubleClick;
         }
-       
+
         private void DefaultCanvas_MouseDoubleClick(object sender, MouseEventArgs e)
         {
             
@@ -108,11 +114,13 @@ namespace UseCaseApp
 
         public void AddDrawingObject(ObjectShape drawingObject)
         {
+            unDoObject.SetStateForUndoRedo();
             this.objectShapes.Add(drawingObject);
         }
 
         public void RemoveDrawingObject(ObjectShape drawingObject)
         {
+            unDoObject.SetStateForUndoRedo();
             this.objectShapes.Remove(drawingObject);
         }
 

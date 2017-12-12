@@ -21,5 +21,8 @@ namespace UseCaseApp
         ObjectShape GetObjectAt(int x, int y);
         ObjectShape SelectObjectAt(int x, int y);
         void DeselectAllObjects();
+        List<ObjectShape> getObjectShapes();
+        void setObjectShapes(List<ObjectShape> objShapes);
+        void setUndoRedoObj(UndoRedo undoRedoObj);
     }
 }

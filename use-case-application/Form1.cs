@@ -16,22 +16,25 @@ namespace UseCaseApp
     {
         private IEditor editor;
         private IToolbox toolbox;
-        
+        private UndoRedo undoRedoObj = null;
+
         public Form1()
         {
             InitializeComponent();
             InitUI();
         }
-        
+
         private void InitUI()
         {
             Debug.WriteLine("Initializing UI objects.");
+            this.Menu = new MainMenu();
+            MenuItem undo = new MenuItem("Undo");
+            this.Menu.MenuItems.Add(undo);
+            MenuItem redo = new MenuItem("Redo");
+            this.Menu.MenuItems.Add(redo);
 
-            //this.Menu = new MainMenu();
-            //MenuItem item = new MenuItem("Edit");
-            //this.Menu.MenuItems.Add(item);
-            //item.MenuItems.Add("Undo");
-            //item.MenuItems.Add("Redo");
+            undo.Click += new System.EventHandler(this.undo_Click);
+            redo.Click += new System.EventHandler(this.redo_Click);
 
             #region Editor and Canvas
 
@@ -41,6 +44,8 @@ namespace UseCaseApp
 
             ICanvas canvas1 = new DefaultCanvas();
             this.editor.AddCanvas(canvas1);
+            this.undoRedoObj = new UndoRedo(canvas1);
+            canvas1.setUndoRedoObj(this.undoRedoObj);
 
             #endregion
 
@@ -53,7 +58,7 @@ namespace UseCaseApp
             this.editor.Toolbox = toolbox;
 
             #endregion
-            
+
             #region Tools
 
             // Initializing tools
@@ -68,6 +73,8 @@ namespace UseCaseApp
 
             this.toolbox.AddTool(new SelectionTool());
             this.toolbox.AddTool(new DeletionTool());
+            this.toolbox.AddTool(new UndoTool());
+            this.toolbox.AddTool(new RedoTool());
 
             this.toolbox.ToolSelected += Toolbox_ToolSelected;
 
@@ -76,6 +83,8 @@ namespace UseCaseApp
 
         private void Toolbox_ToolSelected(ITool tool)
         {
+            Debug.WriteLine("Tool " + tool.Name + " is clicked");
+
             if (this.editor != null)
             {
                 Debug.WriteLine("Tool " + tool.Name + " is selected");
@@ -85,5 +94,55 @@ namespace UseCaseApp
                 this.Cursor = tool.Cursor;
             }
         }
-    } 
+
+        private void undo_Click(object sender, System.EventArgs e)
+        {
+            undoRedoObj.Undo(1);
+            ICanvas canvas = this.editor.GetSelectedCanvas();
+            canvas.Repaint();
+        }
+
+        private void redo_Click(object sender, System.EventArgs e)
+        {
+            undoRedoObj.Redo(1);
+            ICanvas canvas = this.editor.GetSelectedCanvas();
+            canvas.Repaint();
+        }
+
+        //void btnRedo_Click(object sender, EventArgs e)
+        //{
+        //    undoRedoObj.Redo(1);
+
+        //}
+
+        //void btnUndo_Click(object sender, EventArgs e)
+        //{
+        //    undoRedoObj.Undo(1);
+        //}
+
+
+        //void UnDoObject_EnableDisableUndoRedoFeature(object sender, EventArgs e)
+        //{
+        //    if (undoRedoObj.IsUndoPossible())
+        //    {
+
+        //        btnUndo.IsEnabled = true;
+        //    }
+        //    else
+        //    {
+        //        btnUndo.IsEnabled = false;
+
+        //    }
+
+        //    if (undoRedoObj.IsRedoPossible())
+        //    {
+        //        btnRedo.IsEnabled = true;
+        //    }
+        //    else
+        //    {
+        //        btnRedo.IsEnabled = false;
+        //    }
+
+        //}
+    }
 }
