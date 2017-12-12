@@ -142,7 +142,7 @@
     <None Include="resources\relation.png" />
     <None Include="resources\actor.png" />
     <None Include="resources\cursor.png" />
-    <Content Include="resources\eraser.png" />
+    <Content Include="resources\delete.png" />
     <Content Include="resources\Image1.png" />
     <None Include="resources\rectangle.png" />
     <None Include="resources\rectangle_tool.png" />

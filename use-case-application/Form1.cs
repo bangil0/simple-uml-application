@@ -27,11 +27,11 @@ namespace UseCaseApp
         {
             Debug.WriteLine("Initializing UI objects.");
 
-            this.Menu = new MainMenu();
-            MenuItem item = new MenuItem("Edit");
-            this.Menu.MenuItems.Add(item);
-            item.MenuItems.Add("Undo");
-            item.MenuItems.Add("Redo");
+            //this.Menu = new MainMenu();
+            //MenuItem item = new MenuItem("Edit");
+            //this.Menu.MenuItems.Add(item);
+            //item.MenuItems.Add("Undo");
+            //item.MenuItems.Add("Redo");
 
             #region Editor and Canvas
 
@@ -63,6 +63,9 @@ namespace UseCaseApp
             this.toolbox.AddTool(new RectangleTool());
             this.toolbox.AddTool(new EllipseTool());
             //this.toolbox.AddTool(new ActorTool());
+
+            this.toolbox.AddSeparator();
+
             this.toolbox.AddTool(new SelectionTool());
             this.toolbox.AddTool(new DeletionTool());
 

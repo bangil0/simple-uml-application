@@ -40,4 +40,3 @@ D:\REPO\UML\use-case-application\obj\Debug\WindowsFormsApp2.exe
 D:\REPO\UML\use-case-application\obj\Debug\WindowsFormsApp2.pdb
 D:\REPO\UML\use-case-application\obj\Debug\UseCaseApp.IconSet.resources
 D:\REPO\UML\use-case-application\obj\Debug\UseCaseApp.Properties.Resources.resources
-D:\REPO\UML\use-case-application\obj\Debug\use-case-application.csprojResolveAssemblyReference.cache

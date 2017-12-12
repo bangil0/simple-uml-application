@@ -59,5 +59,14 @@ namespace UseCaseApp.Properties {
                 resourceCulture = value;
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to delete.png.
+        /// </summary>
+        internal static string cross {
+            get {
+                return ResourceManager.GetString("cross", resourceCulture);
+            }
+        }
     }
 }

@@ -20,7 +20,7 @@ namespace UseCaseApp
         {
             get
             {
-                return Cursors.Cross;
+                return Cursors.Arrow;
             }
         }
 
