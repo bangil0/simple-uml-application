@@ -12,13 +12,13 @@ using UseCaseApp.Tools;
 
 namespace UseCaseApp
 {
-    public partial class Form1 : Form
+    public partial class UseCaseMaker : Form
     {
         private IEditor editor;
         private IToolbox toolbox;
         private UndoRedo undoRedoObj = null;
 
-        public Form1()
+        public UseCaseMaker()
         {
             InitializeComponent();
             InitUI();

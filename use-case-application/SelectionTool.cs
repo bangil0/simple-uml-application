@@ -76,7 +76,13 @@ namespace UseCaseApp
 
         public void ToolMouseUp(object sender, MouseEventArgs e)
         {
-
+            if (e.Button == MouseButtons.Left && canvas != null)
+            {
+                if (selectedObject != null)
+                {
+                    canvas.initUndoRedo();
+                }
+            }
         }
 
         public void ToolMouseDoubleClick(object sender, MouseEventArgs e)

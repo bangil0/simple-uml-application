@@ -30,17 +30,6 @@ C:\Users\DELL\Desktop\hasilC#\KPL-FP-UseCase\use-case-application\obj\Debug\Wind
 C:\Users\DELL\Desktop\hasilC#\KPL-FP-UseCase\use-case-application\obj\Debug\use-case-application.csproj.GenerateResource.Cache
 C:\Users\DELL\Desktop\hasilC#\KPL-FP-UseCase\use-case-application\obj\Debug\WindowsFormsApp2.exe
 C:\Users\DELL\Desktop\hasilC#\KPL-FP-UseCase\use-case-application\obj\Debug\WindowsFormsApp2.pdb
-D:\REPO\UML\use-case-application\bin\Debug\WindowsFormsApp2.exe
-D:\REPO\UML\use-case-application\bin\Debug\WindowsFormsApp2.exe.config
-D:\REPO\UML\use-case-application\obj\Debug\UseCaseApp.Form1.resources
-D:\REPO\UML\use-case-application\obj\Debug\UseCaseApp.IconSet.resources
-D:\REPO\UML\use-case-application\obj\Debug\UseCaseApp.Properties.Resources.resources
-D:\REPO\UML\use-case-application\obj\Debug\use-case-application.csproj.GenerateResource.Cache
-D:\REPO\UML\use-case-application\obj\Debug\use-case-application.csproj.CoreCompileInputs.cache
-D:\REPO\UML\use-case-application\obj\Debug\WindowsFormsApp2.exe
-D:\REPO\UML\use-case-application\obj\Debug\WindowsFormsApp2.pdb
-D:\REPO\UML\use-case-application\bin\Debug\WindowsFormsApp2.pdb
-D:\REPO\UML\use-case-application\obj\Debug\use-case-application.csprojResolveAssemblyReference.cache
 E:\Kuliah\Semester 7\KPL\simple-uml-application\use-case-application\bin\Debug\WindowsFormsApp2.exe.config
 E:\Kuliah\Semester 7\KPL\simple-uml-application\use-case-application\obj\Debug\WindowsFormsApp2.exe
 E:\Kuliah\Semester 7\KPL\simple-uml-application\use-case-application\obj\Debug\WindowsFormsApp2.pdb
@@ -51,3 +40,14 @@ E:\Kuliah\Semester 7\KPL\simple-uml-application\use-case-application\obj\Debug\U
 E:\Kuliah\Semester 7\KPL\simple-uml-application\use-case-application\obj\Debug\UseCaseApp.IconSet.resources
 E:\Kuliah\Semester 7\KPL\simple-uml-application\use-case-application\obj\Debug\UseCaseApp.Properties.Resources.resources
 E:\Kuliah\Semester 7\KPL\simple-uml-application\use-case-application\obj\Debug\use-case-application.csproj.GenerateResource.Cache
+D:\REPO\UML\use-case-application\bin\Debug\WindowsFormsApp2.exe.config
+D:\REPO\UML\use-case-application\bin\Debug\WindowsFormsApp2.exe
+D:\REPO\UML\use-case-application\bin\Debug\WindowsFormsApp2.pdb
+D:\REPO\UML\use-case-application\obj\Debug\use-case-application.csprojResolveAssemblyReference.cache
+D:\REPO\UML\use-case-application\obj\Debug\UseCaseApp.UseCaseMaker.resources
+D:\REPO\UML\use-case-application\obj\Debug\UseCaseApp.IconSet.resources
+D:\REPO\UML\use-case-application\obj\Debug\UseCaseApp.Properties.Resources.resources
+D:\REPO\UML\use-case-application\obj\Debug\use-case-application.csproj.GenerateResource.Cache
+D:\REPO\UML\use-case-application\obj\Debug\use-case-application.csproj.CoreCompileInputs.cache
+D:\REPO\UML\use-case-application\obj\Debug\WindowsFormsApp2.exe
+D:\REPO\UML\use-case-application\obj\Debug\WindowsFormsApp2.pdb
