@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace WindowsFormsApp2.State
+namespace UseCaseApp.State
 {
     public class EditState : DrawingState
     {

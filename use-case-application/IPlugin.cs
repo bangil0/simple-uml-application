@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace WindowsFormsApp2
+namespace UseCaseApp
 {
     public interface IPlugin
     {

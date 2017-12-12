@@ -2,7 +2,7 @@
 using System.Diagnostics;
 using System.Windows.Forms;
 
-namespace WindowsFormsApp2
+namespace UseCaseApp
 {
     public class DefaultToolbox : ToolStrip, IToolbox
     {

@@ -8,9 +8,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using WindowsFormsApp2.Tools;
+using UseCaseApp.Tools;
 
-namespace WindowsFormsApp2
+namespace UseCaseApp
 {
     public partial class Form1 : Form
     {

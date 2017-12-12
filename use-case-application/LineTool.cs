@@ -1,8 +1,8 @@
 ﻿using System;
 using System.Windows.Forms;
-using WindowsFormsApp2.State;
+using UseCaseApp.State;
 
-namespace WindowsFormsApp2
+namespace UseCaseApp
 {
     public class LineTool : ToolStripButton, ITool
     {

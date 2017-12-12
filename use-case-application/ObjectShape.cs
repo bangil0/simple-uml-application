@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Diagnostics;
 using System.Drawing;
-using WindowsFormsApp2.State;
+using UseCaseApp.State;
 
-namespace WindowsFormsApp2
+namespace UseCaseApp
 {
     public abstract class ObjectShape
     {

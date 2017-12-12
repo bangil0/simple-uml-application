@@ -1,4 +1,4 @@
-﻿namespace WindowsFormsApp2
+﻿namespace UseCaseApp
 {
     partial class Form1
     {

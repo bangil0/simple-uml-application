@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 
 
-namespace WindowsFormsApp2
+namespace UseCaseApp
 {
     public class LineSegment : ObjectShape
     {

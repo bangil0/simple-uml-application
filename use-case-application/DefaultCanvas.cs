@@ -4,7 +4,7 @@ using System.Diagnostics;
 using System.Drawing;
 using System.Windows.Forms;
 
-namespace WindowsFormsApp2
+namespace UseCaseApp
 {
     public class DefaultCanvas : Control, ICanvas
     {

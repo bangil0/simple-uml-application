@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Diagnostics;
 using System.Windows.Forms;
-using WindowsFormsApp2.State;
+using UseCaseApp.State;
 
-namespace WindowsFormsApp2.Tools
+namespace UseCaseApp.Tools
 {
     public class RectangleTool : ToolStripButton, ITool
     {
@@ -103,7 +103,7 @@ namespace WindowsFormsApp2.Tools
 
         public void ToolMouseDoubleClick(object sender, MouseEventArgs e)
         {
-            Text text = new WindowsFormsApp2.Text();
+            Text text = new UseCaseApp.Text();
 
         }
 

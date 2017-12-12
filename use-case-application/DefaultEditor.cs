@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Windows.Forms;
 
-namespace WindowsFormsApp2
+namespace UseCaseApp
 {
     public class DefaultEditor : TabControl, IEditor
     {

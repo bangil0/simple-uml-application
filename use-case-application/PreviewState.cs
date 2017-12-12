@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using WindowsFormsApp2.State;
+using UseCaseApp.State;
 
-namespace WindowsFormsApp2
+namespace UseCaseApp
 {
     public class PreviewState : DrawingState
     {
