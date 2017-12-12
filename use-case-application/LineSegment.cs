@@ -117,7 +117,7 @@ namespace UseCaseApp
             objCopy.Startpoint = this.Startpoint;
             objCopy.Endpoint = this.Endpoint;
             objCopy.pen = this.pen;
-
+            objCopy.ChangeState(StaticState.GetInstance());
             return objCopy;
         }
     }

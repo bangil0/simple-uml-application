@@ -83,7 +83,7 @@ namespace UseCaseApp
             copyObj.brush = this.brush;
             copyObj.font = this.font;
             copyObj.textSize = this.textSize;
-
+            copyObj.ChangeState(StaticState.GetInstance());
             return copyObj;
         }
     }
