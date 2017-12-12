@@ -110,5 +110,17 @@ namespace UseCaseApp
 
             return true;
         }
+
+        public override object Clone()
+        {
+            Rectangle objCopy = new Rectangle();
+            objCopy.X = this.X;
+            objCopy.Y = this.Y;
+            objCopy.Width = this.Width;
+            objCopy.Height = this.Height;
+            objCopy.pen = this.pen;
+
+            return objCopy;
+        }
     }
 }

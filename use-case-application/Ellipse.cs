@@ -108,6 +108,18 @@ namespace UseCaseApp
                 obj.Translate(x, y, xAmount, yAmount);
             }
         }
+
+        public override object Clone()
+        {
+            Ellipse objCopy = new Ellipse();
+            objCopy.X = this.X;
+            objCopy.Y = this.Y;
+            objCopy.Width = this.Width;
+            objCopy.Height = this.Height;
+            objCopy.pen = this.pen;
+
+            return objCopy;
+        }
     }
 }
 

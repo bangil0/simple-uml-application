@@ -8,23 +8,48 @@ namespace UseCaseApp
 {
     class MemOriginator
     {
-        private ObjectShape obj;
+        private DefaultCanvas canvasState;
 
-        public void set (ObjectShape thisObj)
+        public MemOriginator(DefaultCanvas canvas)
         {
-            this.obj = thisObj;
+            canvasState = canvas;
         }
 
-        public MemMemento storeInMemento()
+        public void set(DefaultCanvas canvas)
         {
-            return new MemMemento(obj);
+            this.canvasState = canvas;
         }
 
-        public ObjectShape restoreFromMemento(MemMemento memento)
+        public MemMemento getMemento()
         {
-            obj = memento.getSavedObject();
+            List<ObjectShape> objectShapes = new List<ObjectShape>();
 
-            return obj;
+            foreach (ObjectShape obj in canvasState.getObjectShapes())
+            {
+                ObjectShape newObj = (ObjectShape)obj.Clone();
+                objectShapes.Add(newObj);
+            }
+
+            return new MemMemento(objectShapes);
+        }
+
+        public void setMemento(MemMemento memento)
+        {
+            MemMemento curMem = CloneMemento(memento);
+            canvasState.setObjectShapes(curMem.getSavedObject());
+        }
+
+        public MemMemento CloneMemento(MemMemento mem)
+        {
+            List<ObjectShape> objectShapes = new List<ObjectShape>();
+
+            foreach (ObjectShape obj in mem.getSavedObject())
+            {
+                ObjectShape newObj = (ObjectShape)obj.Clone();
+                objectShapes.Add(newObj);
+            }
+
+            return new MemMemento(objectShapes);
         }
     }
 }

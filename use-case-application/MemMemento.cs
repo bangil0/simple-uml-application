@@ -8,14 +8,14 @@ namespace UseCaseApp
 {
     class MemMemento
     {
-        private ObjectShape obj;
+        private List<ObjectShape> obj;
 
-        public MemMemento(ObjectShape thisObj)
+        public MemMemento(List<ObjectShape> thisObj)
         {
             obj = thisObj;
         }
 
-        public ObjectShape getSavedObject()
+        public List<ObjectShape> getSavedObject()
         {
             return obj;
         }

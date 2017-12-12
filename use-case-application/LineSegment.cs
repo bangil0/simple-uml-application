@@ -110,5 +110,15 @@ namespace UseCaseApp
         {
             return false;
         }
+
+        public override object Clone()
+        {
+            LineSegment objCopy = new LineSegment();
+            objCopy.Startpoint = this.Startpoint;
+            objCopy.Endpoint = this.Endpoint;
+            objCopy.pen = this.pen;
+
+            return objCopy;
+        }
     }
 }

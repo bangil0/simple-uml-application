@@ -8,7 +8,7 @@ using UseCaseApp.State;
 
 namespace UseCaseApp
 {
-    public abstract class ObjectShape
+    public abstract class ObjectShape : ICloneable
     {
         public Guid ID { get; set; }
 
@@ -70,5 +70,7 @@ namespace UseCaseApp
             Debug.WriteLine("Object id= " + ID.ToString() + "is deselected");
             this.state.Deselect(this);
         }
+
+        public abstract object Clone();
     }
 }

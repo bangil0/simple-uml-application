@@ -171,5 +171,15 @@ namespace UseCaseApp
 
             return obj;
         }
+
+        public List<ObjectShape> getObjectShapes()
+        {
+            return this.objectShapes;
+        }
+
+        public void setObjectShapes(List<ObjectShape> objShapes)
+        {
+            this.objectShapes = objShapes;
+        }
     }
 }

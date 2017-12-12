@@ -73,5 +73,18 @@ namespace UseCaseApp
             X += xAmount;
             Y += yAmount;
         }
+
+        public override object Clone()
+        {
+            Text copyObj = new Text();
+            copyObj.Value = this.Value;
+            copyObj.X = this.X;
+            copyObj.Y = this.Y;
+            copyObj.brush = this.brush;
+            copyObj.font = this.font;
+            copyObj.textSize = this.textSize;
+
+            return copyObj;
+        }
     }
 }
