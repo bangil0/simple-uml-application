@@ -46,6 +46,7 @@ namespace UseCaseApp
             this.editor.AddCanvas(canvas1);
             this.undoRedoObj = new UndoRedo(canvas1);
             canvas1.setUndoRedoObj(this.undoRedoObj);
+            canvas1.initUndoRedo();
 
             #endregion
 

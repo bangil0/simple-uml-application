@@ -34,7 +34,7 @@ namespace UseCaseApp.Tools
         }
 
         public RectangleTool()
-        {            
+        {
             this.Name = "Rectangle tool";
             this.ToolTipText = "Rectangle tool";
             this.Image = IconSet.rectangle;
@@ -49,7 +49,6 @@ namespace UseCaseApp.Tools
                 initY = e.Y;
 
                 rectangle = new Rectangle(e.X, e.Y);
-
                 this.canvas.AddDrawingObject(this.rectangle);
             }
         }
@@ -75,7 +74,7 @@ namespace UseCaseApp.Tools
                         rectangle.Height = e.Y - rectangle.Y;
                     }
 
-                    if(e.X > initX && e.Y < initY)
+                    if (e.X > initX && e.Y < initY)
                     {
                         rectangle.X = initX;
                         rectangle.Y = e.Y;
@@ -84,7 +83,7 @@ namespace UseCaseApp.Tools
                         rectangle.Height = initY - rectangle.Y;
                     }
 
-                    if(e.X < initX && e.Y < initY)
+                    if (e.X < initX && e.Y < initY)
                     {
                         rectangle.X = e.X;
                         rectangle.Y = e.Y;

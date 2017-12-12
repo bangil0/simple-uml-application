@@ -11,7 +11,7 @@ namespace UseCaseApp
         private ITool activeTool;
         private List<ObjectShape> objectShapes = new List<ObjectShape>();
         private UndoRedo unDoObject;
-        
+
         public DefaultCanvas()
         {
             Init();
@@ -39,7 +39,7 @@ namespace UseCaseApp
 
         private void DefaultCanvas_MouseDoubleClick(object sender, MouseEventArgs e)
         {
-            
+
             if (this.activeTool != null)
             {
                 this.activeTool.ToolMouseDoubleClick(sender, e);
@@ -51,7 +51,7 @@ namespace UseCaseApp
         {
             if (objectShapes.Count > 0)
             {
-                foreach(ObjectShape obj in objectShapes)
+                foreach (ObjectShape obj in objectShapes)
                 {
                     obj.Deselect();
                 }
@@ -74,7 +74,7 @@ namespace UseCaseApp
         }
 
         private void DefaultCanvas_MouseUp(object sender, MouseEventArgs e)
-        {            
+        {
             if (this.activeTool != null)
             {
                 this.activeTool.ToolMouseUp(sender, e);
@@ -96,12 +96,12 @@ namespace UseCaseApp
             Invalidate();
             Update();
         }
-        
+
         public void SetActiveTool(ITool tool)
         {
             this.activeTool = tool;
         }
-        
+
         public ITool GetActiveTool()
         {
             return this.activeTool;
@@ -114,14 +114,14 @@ namespace UseCaseApp
 
         public void AddDrawingObject(ObjectShape drawingObject)
         {
-            unDoObject.SetStateForUndoRedo();
             this.objectShapes.Add(drawingObject);
+            unDoObject.SetStateForUndoRedo();
         }
 
         public void RemoveDrawingObject(ObjectShape drawingObject)
         {
-            unDoObject.SetStateForUndoRedo();
             this.objectShapes.Remove(drawingObject);
+            unDoObject.SetStateForUndoRedo();
         }
 
         public ObjectShape GetObjectAt(int x, int y)
@@ -188,6 +188,11 @@ namespace UseCaseApp
         public void setObjectShapes(List<ObjectShape> objShapes)
         {
             this.objectShapes = objShapes;
+        }
+
+        public void initUndoRedo()
+        {
+            this.unDoObject.SetStateForUndoRedo();
         }
     }
 }

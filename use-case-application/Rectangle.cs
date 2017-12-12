@@ -121,6 +121,7 @@ namespace UseCaseApp
             objCopy.Height = this.Height;
             objCopy.pen = this.pen;
             objCopy.ChangeState(StaticState.GetInstance());
+            Debug.WriteLine("Cloning Persegi "+objCopy.ID);
 
             return objCopy;
         }

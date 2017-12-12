@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -19,6 +20,7 @@ namespace UseCaseApp
         }
         public void Undo(int level)
         {
+            Debug.WriteLine("Memento " + _Caretaker.IsUndoPossible());
             MemMemento memento = null;
             for (int i = 1; i <= level; i++)
             {
@@ -66,11 +68,15 @@ namespace UseCaseApp
         public bool IsUndoPossible()
         {
             return _Caretaker.IsUndoPossible();
-
         }
         public bool IsRedoPossible()
         {
             return _Caretaker.IsRedoPossible();
+        }
+
+        public void getUndoLevel()
+        {
+            Debug.WriteLine("Undo Level " + _Caretaker.getUndoLevel());
         }
     }
 }

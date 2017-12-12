@@ -24,5 +24,6 @@ namespace UseCaseApp
         List<ObjectShape> getObjectShapes();
         void setObjectShapes(List<ObjectShape> objShapes);
         void setUndoRedoObj(UndoRedo undoRedoObj);
+        void initUndoRedo();
     }
 }
