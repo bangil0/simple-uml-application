@@ -115,7 +115,6 @@ namespace UseCaseApp
         public void AddDrawingObject(ObjectShape drawingObject)
         {
             this.objectShapes.Add(drawingObject);
-            unDoObject.SetStateForUndoRedo();
         }
 
         public void RemoveDrawingObject(ObjectShape drawingObject)

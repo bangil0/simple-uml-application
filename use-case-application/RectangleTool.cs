@@ -98,6 +98,10 @@ namespace UseCaseApp.Tools
         public void ToolMouseUp(object sender, MouseEventArgs e)
         {
             rectangle.ChangeState(EditState.GetInstance());
+            if(this.rectangle.Height > 0 && this.rectangle.Width > 0)
+            {
+                canvas.initUndoRedo();
+            }
         }
 
         public void ToolMouseDoubleClick(object sender, MouseEventArgs e)

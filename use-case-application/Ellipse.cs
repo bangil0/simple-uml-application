@@ -117,6 +117,7 @@ namespace UseCaseApp
             objCopy.Width = this.Width;
             objCopy.Height = this.Height;
             objCopy.pen = this.pen;
+            objCopy.ID = this.ID;
             objCopy.ChangeState(StaticState.GetInstance());
             return objCopy;
         }

@@ -85,6 +85,7 @@ namespace UseCaseApp
             text.Value = "Untitled";
             canvas.AddDrawingObject(text);
             Debug.WriteLine("selection tool double click");
+            canvas.initUndoRedo();
         }
 
         public void ToolKeyUp(object sender, KeyEventArgs e)

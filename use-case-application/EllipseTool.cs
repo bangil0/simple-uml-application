@@ -38,7 +38,7 @@ namespace UseCaseApp
             this.ToolTipText = "Ellipse";
             this.CheckOnClick = true;
             this.Image = IconSet.usecase;
-            }
+        }
 
         public void ToolHotKeysDown(object sender, Keys e)
         {
@@ -114,6 +114,10 @@ namespace UseCaseApp
                 if (e.Button == MouseButtons.Left)
                 {
                     this.ellipse.ChangeState(EditState.GetInstance());
+                    if (this.ellipse.Width > 0 && this.ellipse.Height > 0)
+                    {
+                        canvas.initUndoRedo();
+                    }
                 }
             }
 

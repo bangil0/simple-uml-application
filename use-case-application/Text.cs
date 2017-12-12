@@ -84,6 +84,7 @@ namespace UseCaseApp
             copyObj.font = this.font;
             copyObj.textSize = this.textSize;
             copyObj.ChangeState(StaticState.GetInstance());
+            Debug.WriteLine("Cloning TEXT " + copyObj.ID);
             return copyObj;
         }
     }

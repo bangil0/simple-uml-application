@@ -114,16 +114,17 @@ namespace UseCaseApp
 
         public override object Clone()
         {
-            Rectangle objCopy = new Rectangle();
-            objCopy.X = this.X;
-            objCopy.Y = this.Y;
-            objCopy.Width = this.Width;
-            objCopy.Height = this.Height;
-            objCopy.pen = this.pen;
-            objCopy.ChangeState(StaticState.GetInstance());
-            Debug.WriteLine("Cloning Persegi "+objCopy.ID);
+            Rectangle objRectCopy = new Rectangle();
+            objRectCopy.X = this.X;
+            objRectCopy.Y = this.Y;
+            objRectCopy.Width = this.Width;
+            objRectCopy.Height = this.Height;
+            objRectCopy.pen = this.pen;
+            objRectCopy.drawingObjects = this.drawingObjects;
+            objRectCopy.ID = this.ID;
+            objRectCopy.ChangeState(StaticState.GetInstance());
 
-            return objCopy;
+            return objRectCopy;
         }
     }
 }
