@@ -22,6 +22,8 @@ namespace UseCaseApp
         {
             InitializeComponent();
             InitUI();
+            this.KeyPreview = true;
+            this.KeyDown += Form1_KeyPress;
         }
 
         private void InitUI()
@@ -108,6 +110,24 @@ namespace UseCaseApp
             undoRedoObj.Redo(1);
             ICanvas canvas = this.editor.GetSelectedCanvas();
             canvas.Repaint();
+        }
+
+        void Form1_KeyPress(object sender, KeyEventArgs e)
+        {
+            Debug.WriteLine("KEY" + e.KeyCode);
+            if (e.Control && e.KeyCode == Keys.Z)
+            {
+                undoRedoObj.Undo(1);
+                ICanvas canvas = this.editor.GetSelectedCanvas();
+                canvas.Repaint();
+            }
+
+            if (e.Control && e.KeyCode == Keys.Y)
+            {
+                undoRedoObj.Redo(1);
+                ICanvas canvas = this.editor.GetSelectedCanvas();
+                canvas.Repaint();
+            }
         }
 
         //void btnRedo_Click(object sender, EventArgs e)
