@@ -121,6 +121,16 @@ namespace UseCaseApp
             objCopy.ChangeState(StaticState.GetInstance());
             return objCopy;
         }
+
+        public override bool IsSelectedOnCorner(int x, int y)
+        {
+            throw new NotImplementedException();
+        }
+
+        public override void Resize(int x, int y)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
 

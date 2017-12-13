@@ -6,7 +6,6 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-
 namespace UseCaseApp
 {
     public class SelectionTool : ToolStripButton, ITool
@@ -55,7 +54,6 @@ namespace UseCaseApp
                 canvas.DeselectAllObjects();
                 selectedObject = canvas.SelectObjectAt(e.X, e.Y);
             }
-
         }
 
         public void ToolMouseMove(object sender, MouseEventArgs e)
@@ -64,12 +62,20 @@ namespace UseCaseApp
             {
                 if (selectedObject != null)
                 {
-                    int xAmount = e.X - xInitial;
-                    int yAmount = e.Y - yInitial;
-                    xInitial = e.X;
-                    yInitial = e.Y;
+                    if (canvas.SelectObjectOnCorner(xInitial, yInitial))
+                    {
+                        selectedObject.ChangeState(PreviewState.GetInstance());
+                    }
+                    else
+                    {
+                        int xAmount = e.X - xInitial;
+                        int yAmount = e.Y - yInitial;
 
-                    selectedObject.Translate(e.X, e.Y, xAmount, yAmount);
+                        xInitial = e.X;
+                        yInitial = e.Y;
+
+                        selectedObject.Translate(e.X, e.Y, xAmount, yAmount);
+                    }                   
                 }
             }
         }
@@ -80,6 +86,13 @@ namespace UseCaseApp
             {
                 if (selectedObject != null)
                 {
+                    if (canvas.SelectObjectOnCorner(xInitial, yInitial))
+                    {
+                        selectedObject.ChangeState(EditState.GetInstance());
+
+                        selectedObject.Resize(e.X, e.Y);
+                    }
+
                     canvas.initUndoRedo();
                 }
             }

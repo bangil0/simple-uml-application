@@ -87,5 +87,15 @@ namespace UseCaseApp
             Debug.WriteLine("Cloning TEXT " + copyObj.ID);
             return copyObj;
         }
+
+        public override bool IsSelectedOnCorner(int x, int y)
+        {
+            throw new NotImplementedException();
+        }
+
+        public override void Resize(int x, int y)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

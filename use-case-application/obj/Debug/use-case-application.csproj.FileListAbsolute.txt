@@ -13,9 +13,6 @@ C:\Users\Salman Rameli\Documents\Visual Studio 2017\Projects\use-case-applicatio
 C:\Users\Salman Rameli\Documents\Visual Studio 2017\Projects\use-case-application\use-case-application\bin\Debug\WindowsFormsApp2.exe
 C:\Users\Salman Rameli\Documents\Visual Studio 2017\Projects\use-case-application\use-case-application\bin\Debug\WindowsFormsApp2.pdb
 C:\Users\Salman Rameli\Documents\Visual Studio 2017\Projects\use-case-application\use-case-application\obj\Debug\use-case-application.csprojResolveAssemblyReference.cache
-C:\Users\Salman Rameli\Documents\Visual Studio 2017\Projects\use-case-application\use-case-application\obj\Debug\WindowsFormsApp2.Form1.resources
-C:\Users\Salman Rameli\Documents\Visual Studio 2017\Projects\use-case-application\use-case-application\obj\Debug\WindowsFormsApp2.IconSet.resources
-C:\Users\Salman Rameli\Documents\Visual Studio 2017\Projects\use-case-application\use-case-application\obj\Debug\WindowsFormsApp2.Properties.Resources.resources
 C:\Users\Salman Rameli\Documents\Visual Studio 2017\Projects\use-case-application\use-case-application\obj\Debug\use-case-application.csproj.GenerateResource.Cache
 C:\Users\Salman Rameli\Documents\Visual Studio 2017\Projects\use-case-application\use-case-application\obj\Debug\use-case-application.csproj.CoreCompileInputs.cache
 C:\Users\Salman Rameli\Documents\Visual Studio 2017\Projects\use-case-application\use-case-application\obj\Debug\WindowsFormsApp2.exe
@@ -51,3 +48,6 @@ D:\REPO\UML\use-case-application\obj\Debug\use-case-application.csproj.GenerateR
 D:\REPO\UML\use-case-application\obj\Debug\use-case-application.csproj.CoreCompileInputs.cache
 D:\REPO\UML\use-case-application\obj\Debug\WindowsFormsApp2.exe
 D:\REPO\UML\use-case-application\obj\Debug\WindowsFormsApp2.pdb
+C:\Users\Salman Rameli\Documents\Visual Studio 2017\Projects\use-case-application\use-case-application\obj\Debug\UseCaseApp.UseCaseMaker.resources
+C:\Users\Salman Rameli\Documents\Visual Studio 2017\Projects\use-case-application\use-case-application\obj\Debug\UseCaseApp.IconSet.resources
+C:\Users\Salman Rameli\Documents\Visual Studio 2017\Projects\use-case-application\use-case-application\obj\Debug\UseCaseApp.Properties.Resources.resources

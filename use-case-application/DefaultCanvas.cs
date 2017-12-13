@@ -127,7 +127,7 @@ namespace UseCaseApp
         {
             foreach (ObjectShape obj in objectShapes)
             {
-                if (obj.Intersect(x, y))
+                if (obj.Intersect(x, y) || obj.IsSelectedOnCorner(x, y))
                 {
                     return obj;
                 }
@@ -147,36 +147,25 @@ namespace UseCaseApp
             return obj;
         }
 
+        public bool SelectObjectOnCorner(int x, int y)
+        {
+            foreach (ObjectShape obj in objectShapes)
+            {
+                if (obj.IsSelectedOnCorner(x, y))
+                {
+                    return true;
+                }
+            }
+
+            return false;
+        }
+
         public void DeselectAllObjects()
         {
             foreach (ObjectShape drawObj in objectShapes)
             {
                 drawObj.Deselect();
             }
-        }
-
-        ObjectShape ICanvas.GetObjectAt(int x, int y)
-        {
-            foreach (ObjectShape obj in objectShapes)
-            {
-                if (obj.Intersect(x, y))
-                {
-                    return obj;
-                }
-            }
-            return null;
-        }
-
-        ObjectShape ICanvas.SelectObjectAt(int x, int y)
-        {
-            ObjectShape obj = GetObjectAt(x, y);
-
-            if (obj != null)
-            {
-                obj.Select();
-            }
-
-            return obj;
         }
 
         public List<ObjectShape> getObjectShapes()

@@ -4,6 +4,7 @@ using System.Diagnostics;
 using System.Drawing;
 using System.Drawing.Drawing2D;
 using UseCaseApp.State;
+using System.Windows.Forms;
 
 namespace UseCaseApp
 {
@@ -34,16 +35,6 @@ namespace UseCaseApp
         {
             this.Width = width;
             this.Height = height;
-        }
-
-        public override bool Intersect(int xTest, int yTest)
-        {
-            if ((xTest >= X && xTest <= X + Width) && (yTest >= Y && yTest <= Y + Height))
-            {
-                Debug.WriteLine("Object " + ID + " is selected.");
-                return true;
-            }
-            return false;
         }
 
         public override void RenderOnStaticView()
@@ -86,6 +77,25 @@ namespace UseCaseApp
             }
         }
 
+        public override bool IsSelectedOnCorner(int xTest, int yTest)
+        {
+            if (xTest == X || xTest == X + Width || yTest == Y || yTest == Y + Height)
+            {
+                return true;
+            }
+
+            return false;
+        }
+
+        public override bool Intersect(int xTest, int yTest)
+        {
+            if ((xTest >= X && xTest <= X + Width) && (yTest >= Y && yTest <= Y + Height))
+            {
+                Debug.WriteLine("Object " + ID + " is selected.");
+                return true;
+            }
+            return false;
+        }        
 
         public override void Translate(int x, int y, int xAmount, int yAmount)
         {
@@ -96,6 +106,12 @@ namespace UseCaseApp
             {
                 obj.Translate(x, y, xAmount, yAmount);
             }
+        }
+
+        public override void Resize(int x, int y)
+        {
+            this.Width = x;
+            this.Height = y;
         }
 
         public override bool Add(ObjectShape obj)

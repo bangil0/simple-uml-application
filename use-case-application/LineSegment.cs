@@ -114,5 +114,15 @@ namespace UseCaseApp
             Debug.WriteLine("Cloning LINE " + objCopy.ID);
             return objCopy;
         }
+
+        public override bool IsSelectedOnCorner(int x, int y)
+        {
+            throw new NotImplementedException();
+        }
+
+        public override void Resize(int x, int y)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
