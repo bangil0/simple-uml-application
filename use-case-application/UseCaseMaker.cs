@@ -28,15 +28,15 @@ namespace UseCaseApp
 
         private void InitUI()
         {
-            Debug.WriteLine("Initializing UI objects.");
-            this.Menu = new MainMenu();
-            MenuItem undo = new MenuItem("Undo");
-            this.Menu.MenuItems.Add(undo);
-            MenuItem redo = new MenuItem("Redo");
-            this.Menu.MenuItems.Add(redo);
+            //Debug.WriteLine("Initializing UI objects.");
+            //this.Menu = new MainMenu();
+            //MenuItem undo = new MenuItem("Undo");
+            //this.Menu.MenuItems.Add(undo);
+            //MenuItem redo = new MenuItem("Redo");
+            //this.Menu.MenuItems.Add(redo);
 
-            undo.Click += new System.EventHandler(this.undo_Click);
-            redo.Click += new System.EventHandler(this.redo_Click);
+            //undo.Click += new System.EventHandler(this.undo_Click);
+            //redo.Click += new System.EventHandler(this.redo_Click);
 
             #region Editor and Canvas
 
@@ -80,14 +80,26 @@ namespace UseCaseApp
             this.toolbox.AddTool(new RedoTool());
 
             this.toolbox.ToolSelected += Toolbox_ToolSelected;
-
+            this.toolbox.ToolClicked += Toolbox_ToolClicked;
             #endregion
+        }
+
+        private void Toolbox_ToolClicked(ITool tool)
+        {
+            if(tool.Name == "undo")
+            {
+                undoRedoObj.Undo(1);
+            }
+            else if(tool.Name == "redo")
+            {
+                undoRedoObj.Redo(1);
+            }
+            ICanvas canvas = this.editor.GetSelectedCanvas();
+            canvas.Repaint();
         }
 
         private void Toolbox_ToolSelected(ITool tool)
         {
-            Debug.WriteLine("Tool " + tool.Name + " is clicked");
-
             if (this.editor != null)
             {
                 Debug.WriteLine("Tool " + tool.Name + " is selected");
@@ -98,19 +110,19 @@ namespace UseCaseApp
             }
         }
 
-        private void undo_Click(object sender, System.EventArgs e)
-        {
-            undoRedoObj.Undo(1);
-            ICanvas canvas = this.editor.GetSelectedCanvas();
-            canvas.Repaint();
-        }
+        //private void undo_Click(object sender, System.EventArgs e)
+        //{
+        //    undoRedoObj.Undo(1);
+        //    ICanvas canvas = this.editor.GetSelectedCanvas();
+        //    canvas.Repaint();
+        //}
 
-        private void redo_Click(object sender, System.EventArgs e)
-        {
-            undoRedoObj.Redo(1);
-            ICanvas canvas = this.editor.GetSelectedCanvas();
-            canvas.Repaint();
-        }
+        //private void redo_Click(object sender, System.EventArgs e)
+        //{
+        //    undoRedoObj.Redo(1);
+        //    ICanvas canvas = this.editor.GetSelectedCanvas();
+        //    canvas.Repaint();
+        //}
 
         void Form1_KeyPress(object sender, KeyEventArgs e)
         {
@@ -129,18 +141,6 @@ namespace UseCaseApp
                 canvas.Repaint();
             }
         }
-
-        //void btnRedo_Click(object sender, EventArgs e)
-        //{
-        //    undoRedoObj.Redo(1);
-
-        //}
-
-        //void btnUndo_Click(object sender, EventArgs e)
-        //{
-        //    undoRedoObj.Undo(1);
-        //}
-
 
         //void UnDoObject_EnableDisableUndoRedoFeature(object sender, EventArgs e)
         //{
@@ -163,7 +163,6 @@ namespace UseCaseApp
         //    {
         //        btnRedo.IsEnabled = false;
         //    }
-
         //}
     }
 }

@@ -10,7 +10,7 @@ namespace UseCaseApp
 
     public interface IToolbox
     {
-        event ToolSelectedEventHandler ToolSelected;
+        event ToolSelectedEventHandler ToolSelected, ToolClicked;
         void Register(IPlugin plugin);
         void AddTool(ITool tool);
         void RemoveTool(ITool tool);
