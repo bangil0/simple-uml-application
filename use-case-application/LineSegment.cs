@@ -117,7 +117,13 @@ namespace UseCaseApp
 
         public override bool IsSelectedOnCorner(int x, int y)
         {
-            throw new NotImplementedException();
+            if ((Startpoint.X == x && Startpoint.Y == y) || (Endpoint.X == x && Endpoint.Y == y))
+            {
+                MessageBox.Show("line selected on corner");
+                return true;
+            }
+
+            return false;
         }
 
         public override void Resize(int x, int y)

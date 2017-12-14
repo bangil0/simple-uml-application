@@ -39,7 +39,6 @@ namespace UseCaseApp
 
         private void DefaultCanvas_MouseDoubleClick(object sender, MouseEventArgs e)
         {
-
             if (this.activeTool != null)
             {
                 this.activeTool.ToolMouseDoubleClick(sender, e);
