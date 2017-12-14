@@ -21,9 +21,10 @@ namespace UseCaseApp
 
         public Actor()
         {
-            this.pen = new Pen(Color.Black);
-            pen.Width = 1.5f;
+            //this.pen = new Pen(Color.Black);
+            //pen.Width = 1.5f;
             drawingObjects = new List<ObjectShape>();
+
         }
 
         public Actor(int x, int y) : this()
@@ -64,7 +65,7 @@ namespace UseCaseApp
 
         public override void RenderOnEditingView()
         {
-            throw new NotImplementedException();
+           
         }
 
         public override void RenderOnPreview()
@@ -74,7 +75,7 @@ namespace UseCaseApp
 
         public override void RenderOnStaticView()
         {
-            throw new NotImplementedException();
+            //throw new NotImplementedException();
         }
 
         public override void Translate(int x, int y, int xAmount, int yAmount)

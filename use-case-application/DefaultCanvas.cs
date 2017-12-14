@@ -189,5 +189,10 @@ namespace UseCaseApp
         {
             this.objectShapes = objShapes;
         }
+
+        public void AddDrawingObject(string v)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

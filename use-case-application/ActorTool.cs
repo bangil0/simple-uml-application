@@ -1,8 +1,9 @@
 ﻿using System;
 using System.Windows.Forms;
-using WindowsFormsApp2.State;
+using System.Drawing;
+using UseCaseApp.State;
 
-namespace WindowsFormsApp2.Tools
+namespace UseCaseApp
 {
     public class ActorTool : ToolStripButton, ITool
     {
@@ -42,8 +43,9 @@ namespace WindowsFormsApp2.Tools
         {
             if (e.Button == MouseButtons.Left)
             {
-                actor = new Actor(e.X, e.Y);
-                this.canvas.AddDrawingObject(this.actor);
+                //actor = new Actor(e.X, e.Y);
+                //this.canvas.AddDrawingObject(this.actor);
+                this.Image = Image.FromFile("E:\\Kuliah\\Semester 7\\KPL\\simple-uml-application\\use-case-application\\resources\\actor.png");
 
             }
         }
@@ -68,7 +70,7 @@ namespace WindowsFormsApp2.Tools
 
         public void ToolMouseUp(object sender, MouseEventArgs e)
         {
-            actor.ChangeState(EditState.GetInstance());
+            actor.ChangeState(PreviewState.GetInstance());
         }
 
         public void ToolMouseDoubleClick(object sender, MouseEventArgs e)
