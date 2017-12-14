@@ -1,11 +1,11 @@
 ## To-do
 ### Belum dikerjakan
 - [ ] implementasi composite pattern
-- [ ] buat obyek bisa diresize
 - [ ] buat obyek aktor
 
 ### Sedang dikerjakan
 - [x] buat text --n
+- [x] buat obyek bisa diresize --s
 
 ### Sudah dikerjakan
 - [x] implementasi state pattern (preview, edit, static state)
