@@ -15,11 +15,6 @@ namespace UseCaseApp
             canvasState = canvas;
         }
 
-        public void set(ICanvas canvas)
-        {
-            this.canvasState = canvas;
-        }
-
         public MemMemento getMemento()
         {
             List<ObjectShape> objectShapes = new List<ObjectShape>();

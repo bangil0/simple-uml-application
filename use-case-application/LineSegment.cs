@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+using System.Diagnostics;
 
 namespace UseCaseApp
 {
@@ -42,11 +42,8 @@ namespace UseCaseApp
             pen.Width = 1.5f;
             pen.DashStyle = System.Drawing.Drawing2D.DashStyle.Solid;
 
-            if (this.GetGraphics() != null)
-            {
-                this.GetGraphics().SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.AntiAlias;
-                this.GetGraphics().DrawLine(pen, this.Startpoint, this.Endpoint);
-            }
+            this.GetGraphics().SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.AntiAlias;
+            this.GetGraphics().DrawLine(pen, this.Startpoint, this.Endpoint);
         }
 
         public override void RenderOnEditingView()
@@ -55,11 +52,9 @@ namespace UseCaseApp
             pen.Width = 1.5f;
             pen.DashStyle = System.Drawing.Drawing2D.DashStyle.Solid;
 
-            if (this.GetGraphics() != null)
-            {
-                this.GetGraphics().SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.AntiAlias;
-                this.GetGraphics().DrawLine(pen, this.Startpoint, this.Endpoint);
-            }
+            this.GetGraphics().SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.AntiAlias;
+            this.GetGraphics().DrawLine(pen, this.Startpoint, this.Endpoint);
+
         }
 
         public override void RenderOnPreview()
@@ -68,11 +63,8 @@ namespace UseCaseApp
             pen.Width = 1.5f;
             pen.DashStyle = System.Drawing.Drawing2D.DashStyle.DashDotDot;
 
-            if (this.GetGraphics() != null)
-            {
-                this.GetGraphics().SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.AntiAlias;
-                this.GetGraphics().DrawLine(pen, this.Startpoint, this.Endpoint);
-            }
+            this.GetGraphics().SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.AntiAlias;
+            this.GetGraphics().DrawLine(pen, this.Startpoint, this.Endpoint);
         }
 
         public override bool Intersect(int xTest, int yTest)
@@ -81,7 +73,7 @@ namespace UseCaseApp
             double b = Endpoint.Y - m * Endpoint.X;
             double y_point = m * xTest + b;
 
-            if(Math.Abs(yTest - y_point) < EPSILON)
+            if (Math.Abs(yTest - y_point) < EPSILON)
             {
                 System.Diagnostics.Debug.WriteLine("Object " + ID + " is selected.");
                 return true;
@@ -117,8 +109,26 @@ namespace UseCaseApp
             objCopy.Startpoint = this.Startpoint;
             objCopy.Endpoint = this.Endpoint;
             objCopy.pen = this.pen;
+            objCopy.ID = this.ID;
             objCopy.ChangeState(StaticState.GetInstance());
+            Debug.WriteLine("Cloning LINE " + objCopy.ID);
             return objCopy;
+        }
+
+        public override bool IsSelectedOnCorner(int x, int y)
+        {
+            if ((Startpoint.X == x && Startpoint.Y == y) || (Endpoint.X == x && Endpoint.Y == y))
+            {
+                MessageBox.Show("line selected on corner");
+                return true;
+            }
+
+            return false;
+        }
+
+        public override void Resize(int x, int y)
+        {
+            throw new NotImplementedException();
         }
     }
 }

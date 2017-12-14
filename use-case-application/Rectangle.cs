@@ -4,6 +4,7 @@ using System.Diagnostics;
 using System.Drawing;
 using System.Drawing.Drawing2D;
 using UseCaseApp.State;
+using System.Windows.Forms;
 
 namespace UseCaseApp
 {
@@ -34,16 +35,6 @@ namespace UseCaseApp
         {
             this.Width = width;
             this.Height = height;
-        }
-
-        public override bool Intersect(int xTest, int yTest)
-        {
-            if ((xTest >= X && xTest <= X + Width) && (yTest >= Y && yTest <= Y + Height))
-            {
-                Debug.WriteLine("Object " + ID + " is selected.");
-                return true;
-            }
-            return false;
         }
 
         public override void RenderOnStaticView()
@@ -86,6 +77,25 @@ namespace UseCaseApp
             }
         }
 
+        public override bool IsSelectedOnCorner(int xTest, int yTest)
+        {
+            if (xTest == X || xTest == X + Width || yTest == Y || yTest == Y + Height)
+            {
+                return true;
+            }
+
+            return false;
+        }
+
+        public override bool Intersect(int xTest, int yTest)
+        {
+            if ((xTest >= X && xTest <= X + Width) && (yTest >= Y && yTest <= Y + Height))
+            {
+                Debug.WriteLine("Object " + ID + " is selected.");
+                return true;
+            }
+            return false;
+        }        
 
         public override void Translate(int x, int y, int xAmount, int yAmount)
         {
@@ -96,6 +106,12 @@ namespace UseCaseApp
             {
                 obj.Translate(x, y, xAmount, yAmount);
             }
+        }
+
+        public override void Resize(int x, int y)
+        {
+            this.Width = x;
+            this.Height = y;
         }
 
         public override bool Add(ObjectShape obj)
@@ -114,15 +130,17 @@ namespace UseCaseApp
 
         public override object Clone()
         {
-            Rectangle objCopy = new Rectangle();
-            objCopy.X = this.X;
-            objCopy.Y = this.Y;
-            objCopy.Width = this.Width;
-            objCopy.Height = this.Height;
-            objCopy.pen = this.pen;
-            objCopy.ChangeState(StaticState.GetInstance());
+            Rectangle objRectCopy = new Rectangle();
+            objRectCopy.X = this.X;
+            objRectCopy.Y = this.Y;
+            objRectCopy.Width = this.Width;
+            objRectCopy.Height = this.Height;
+            objRectCopy.pen = this.pen;
+            objRectCopy.drawingObjects = this.drawingObjects;
+            objRectCopy.ID = this.ID;
+            objRectCopy.ChangeState(StaticState.GetInstance());
 
-            return objCopy;
+            return objRectCopy;
         }
     }
 }

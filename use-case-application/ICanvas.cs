@@ -11,6 +11,7 @@ namespace UseCaseApp
     {
         String Name { get; set; }
         ITool GetActiveTool();
+
         void SetActiveTool(ITool tool);
         void Repaint();
         void SetBackgroundColor(Color color);
@@ -20,10 +21,14 @@ namespace UseCaseApp
 
         ObjectShape GetObjectAt(int x, int y);
         ObjectShape SelectObjectAt(int x, int y);
+        bool SelectObjectOnCorner(int x, int y);
+
         void DeselectAllObjects();
+
         List<ObjectShape> getObjectShapes();
+
         void setObjectShapes(List<ObjectShape> objShapes);
         void setUndoRedoObj(UndoRedo undoRedoObj);
-        void AddDrawingObject(string v);
+        void initUndoRedo();
     }
 }

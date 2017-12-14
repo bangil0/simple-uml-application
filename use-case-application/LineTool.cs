@@ -62,6 +62,10 @@ namespace UseCaseApp
         public void ToolMouseUp(object sender, MouseEventArgs e)
         {
             lineSegment.ChangeState(EditState.GetInstance());
+            if(this.lineSegment.Startpoint != this.lineSegment.Endpoint)
+            {
+                canvas.initUndoRedo();
+            }
 
             if (this.lineSegment != null)
             {

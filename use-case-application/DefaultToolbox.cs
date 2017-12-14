@@ -21,7 +21,7 @@ namespace UseCaseApp
             }
         }
 
-        public event ToolSelectedEventHandler ToolSelected;
+        public event ToolSelectedEventHandler ToolSelected, ToolClicked;
 
         public void AddSeparator()
         {
@@ -38,8 +38,29 @@ namespace UseCaseApp
                 {
                     toggleButton.CheckedChanged += toggleButton_CheckedChanged;
                 }
+                else
+                {
+                    toggleButton.Click += Button_Clicked;
+                }
 
                 this.Items.Add(toggleButton);
+            }
+        }
+
+        private void Button_Clicked(object sender, EventArgs e)
+        {
+            if (sender is ToolStripButton)
+            {
+                ToolStripButton button = (ToolStripButton)sender;
+                if (button is ITool)
+                {
+                    ITool clickedTool = (ITool)button;
+                    ToolClicked?.Invoke(clickedTool);
+                }
+                else
+                {
+                    throw new InvalidCastException("The tool is not an instance of ITool.");
+                }
             }
         }
 
@@ -86,7 +107,7 @@ namespace UseCaseApp
                 }
             }
         }
-        
+
         public void Register(IPlugin plugin)
         {
             if (plugin != null)

@@ -43,9 +43,9 @@ namespace UseCaseApp
         {
             if (e.Button == MouseButtons.Left)
             {
-                //actor = new Actor(e.X, e.Y);
-                //this.canvas.AddDrawingObject(this.actor);
-                this.Image = Image.FromFile("E:\\Kuliah\\Semester 7\\KPL\\simple-uml-application\\use-case-application\\resources\\actor.png");
+                actor = new Actor(e.X, e.Y);
+                this.canvas.AddDrawingObject(this.actor);
+                //this.Image = Image.FromFile("E:\\Kuliah\\Semester 7\\KPL\\simple-uml-application\\use-case-application\\resources\\actor.png");
 
             }
         }

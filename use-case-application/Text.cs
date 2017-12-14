@@ -84,7 +84,18 @@ namespace UseCaseApp
             copyObj.font = this.font;
             copyObj.textSize = this.textSize;
             copyObj.ChangeState(StaticState.GetInstance());
+            Debug.WriteLine("Cloning TEXT " + copyObj.ID);
             return copyObj;
+        }
+
+        public override bool IsSelectedOnCorner(int x, int y)
+        {
+            return false;
+        }
+
+        public override void Resize(int x, int y)
+        {
+           
         }
     }
 }

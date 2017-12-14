@@ -1,6 +1,6 @@
 ﻿namespace UseCaseApp
 {
-    partial class Form1
+    partial class UseCaseMaker
     {
         /// <summary>
         /// Required designer variable.
@@ -51,7 +51,7 @@
             this.ClientSize = new System.Drawing.Size(851, 515);
             this.Controls.Add(this.toolStripContainer1);
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.Text = "UseCase Maker";
             this.toolStripContainer1.ResumeLayout(false);
             this.toolStripContainer1.PerformLayout();
             this.ResumeLayout(false);

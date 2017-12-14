@@ -34,6 +34,9 @@ namespace UseCaseApp
 
         public abstract bool Intersect(int xTest, int yTest);
         public abstract void Translate(int x, int y, int xAmount, int yAmount);
+        public abstract bool IsSelectedOnCorner(int x, int y);
+
+        public abstract void Resize(int x, int y);
 
         public abstract void RenderOnPreview();
         public abstract void RenderOnEditingView();

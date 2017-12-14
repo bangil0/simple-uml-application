@@ -12,9 +12,6 @@ namespace UseCaseApp
     public class RedoTool : ToolStripButton, ITool
     {
         private ICanvas canvas;
-        private ObjectShape selectedObject;
-        private int xInitial;
-        private int yInitial;
 
         public Cursor Cursor
         {
@@ -47,15 +44,6 @@ namespace UseCaseApp
 
         public void ToolMouseDown(object sender, MouseEventArgs e)
         {
-            this.xInitial = e.X;
-            this.yInitial = e.Y;
-
-            if (e.Button == MouseButtons.Left && canvas != null)
-            {
-                canvas.DeselectAllObjects();
-                selectedObject = canvas.SelectObjectAt(e.X, e.Y);
-                canvas.RemoveDrawingObject(selectedObject);
-            }
 
         }
 

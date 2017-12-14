@@ -11,7 +11,7 @@ namespace UseCaseApp
         private ITool activeTool;
         private List<ObjectShape> objectShapes = new List<ObjectShape>();
         private UndoRedo unDoObject;
-        
+
         public DefaultCanvas()
         {
             Init();
@@ -39,7 +39,6 @@ namespace UseCaseApp
 
         private void DefaultCanvas_MouseDoubleClick(object sender, MouseEventArgs e)
         {
-            
             if (this.activeTool != null)
             {
                 this.activeTool.ToolMouseDoubleClick(sender, e);
@@ -51,7 +50,7 @@ namespace UseCaseApp
         {
             if (objectShapes.Count > 0)
             {
-                foreach(ObjectShape obj in objectShapes)
+                foreach (ObjectShape obj in objectShapes)
                 {
                     obj.Deselect();
                 }
@@ -74,7 +73,7 @@ namespace UseCaseApp
         }
 
         private void DefaultCanvas_MouseUp(object sender, MouseEventArgs e)
-        {            
+        {
             if (this.activeTool != null)
             {
                 this.activeTool.ToolMouseUp(sender, e);
@@ -96,12 +95,12 @@ namespace UseCaseApp
             Invalidate();
             Update();
         }
-        
+
         public void SetActiveTool(ITool tool)
         {
             this.activeTool = tool;
         }
-        
+
         public ITool GetActiveTool()
         {
             return this.activeTool;
@@ -114,21 +113,20 @@ namespace UseCaseApp
 
         public void AddDrawingObject(ObjectShape drawingObject)
         {
-            unDoObject.SetStateForUndoRedo();
             this.objectShapes.Add(drawingObject);
         }
 
         public void RemoveDrawingObject(ObjectShape drawingObject)
         {
-            unDoObject.SetStateForUndoRedo();
             this.objectShapes.Remove(drawingObject);
+            unDoObject.SetStateForUndoRedo();
         }
 
         public ObjectShape GetObjectAt(int x, int y)
         {
             foreach (ObjectShape obj in objectShapes)
             {
-                if (obj.Intersect(x, y))
+                if (obj.Intersect(x, y) || obj.IsSelectedOnCorner(x, y))
                 {
                     return obj;
                 }
@@ -148,36 +146,25 @@ namespace UseCaseApp
             return obj;
         }
 
+        public bool SelectObjectOnCorner(int x, int y)
+        {
+            foreach (ObjectShape obj in objectShapes)
+            {
+                if (obj.IsSelectedOnCorner(x, y))
+                {
+                    return true;
+                }
+            }
+
+            return false;
+        }
+
         public void DeselectAllObjects()
         {
             foreach (ObjectShape drawObj in objectShapes)
             {
                 drawObj.Deselect();
             }
-        }
-
-        ObjectShape ICanvas.GetObjectAt(int x, int y)
-        {
-            foreach (ObjectShape obj in objectShapes)
-            {
-                if (obj.Intersect(x, y))
-                {
-                    return obj;
-                }
-            }
-            return null;
-        }
-
-        ObjectShape ICanvas.SelectObjectAt(int x, int y)
-        {
-            ObjectShape obj = GetObjectAt(x, y);
-
-            if (obj != null)
-            {
-                obj.Select();
-            }
-
-            return obj;
         }
 
         public List<ObjectShape> getObjectShapes()
@@ -190,9 +177,9 @@ namespace UseCaseApp
             this.objectShapes = objShapes;
         }
 
-        public void AddDrawingObject(string v)
+        public void initUndoRedo()
         {
-            throw new NotImplementedException();
+            this.unDoObject.SetStateForUndoRedo();
         }
     }
 }

@@ -12,9 +12,6 @@ namespace UseCaseApp
     public class UndoTool : ToolStripButton, ITool
     {
         private ICanvas canvas;
-        private ObjectShape selectedObject;
-        private int xInitial;
-        private int yInitial;
 
         public Cursor Cursor
         {

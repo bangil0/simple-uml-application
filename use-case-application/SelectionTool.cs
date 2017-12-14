@@ -6,7 +6,6 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-
 namespace UseCaseApp
 {
     public class SelectionTool : ToolStripButton, ITool
@@ -55,7 +54,6 @@ namespace UseCaseApp
                 canvas.DeselectAllObjects();
                 selectedObject = canvas.SelectObjectAt(e.X, e.Y);
             }
-
         }
 
         public void ToolMouseMove(object sender, MouseEventArgs e)
@@ -64,19 +62,40 @@ namespace UseCaseApp
             {
                 if (selectedObject != null)
                 {
-                    int xAmount = e.X - xInitial;
-                    int yAmount = e.Y - yInitial;
-                    xInitial = e.X;
-                    yInitial = e.Y;
+                    if (canvas.SelectObjectOnCorner(xInitial, yInitial))
+                    {
+                        selectedObject.ChangeState(PreviewState.GetInstance());
+                    }
+                    else
+                    {
+                        int xAmount = e.X - xInitial;
+                        int yAmount = e.Y - yInitial;
 
-                    selectedObject.Translate(e.X, e.Y, xAmount, yAmount);
+                        xInitial = e.X;
+                        yInitial = e.Y;
+
+                        selectedObject.Translate(e.X, e.Y, xAmount, yAmount);
+                    }                   
                 }
             }
         }
 
         public void ToolMouseUp(object sender, MouseEventArgs e)
         {
+            if (e.Button == MouseButtons.Left && canvas != null)
+            {
+                if (selectedObject != null)
+                {
+                    if (canvas.SelectObjectOnCorner(xInitial, yInitial))
+                    {
+                        selectedObject.ChangeState(EditState.GetInstance());
 
+                        selectedObject.Resize(e.X, e.Y);
+                    }
+
+                    canvas.initUndoRedo();
+                }
+            }
         }
 
         public void ToolMouseDoubleClick(object sender, MouseEventArgs e)
@@ -85,6 +104,7 @@ namespace UseCaseApp
             text.Value = "Untitled";
             canvas.AddDrawingObject(text);
             Debug.WriteLine("selection tool double click");
+            canvas.initUndoRedo();
         }
 
         public void ToolKeyUp(object sender, KeyEventArgs e)

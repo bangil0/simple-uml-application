@@ -69,11 +69,11 @@
     <Compile Include="DrawingState.cs" />
     <Compile Include="EditState.cs" />
     <Compile Include="Ellipse.cs" />
-    <Compile Include="Form1.cs">
+    <Compile Include="UseCaseMaker.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="UseCaseMaker.Designer.cs">
+      <DependentUpon>UseCaseMaker.cs</DependentUpon>
     </Compile>
     <Compile Include="ICanvas.cs" />
     <Compile Include="IconSet.Designer.cs">
@@ -115,8 +115,8 @@
     <Compile Include="StaticState.cs" />
     <Compile Include="Text.cs" />
     <Compile Include="UndoRedo.cs" />
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <EmbeddedResource Include="UseCaseMaker.resx">
+      <DependentUpon>UseCaseMaker.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="IconSet.resx">
       <Generator>ResXFileCodeGenerator</Generator>
