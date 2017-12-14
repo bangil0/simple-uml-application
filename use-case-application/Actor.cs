@@ -103,12 +103,12 @@ namespace UseCaseApp
 
         public override bool IsSelectedOnCorner(int x, int y)
         {
-            throw new NotImplementedException();
+            return false;
         }
 
         public override void Resize(int x, int y)
         {
-            throw new NotImplementedException();
+            
         }
     }
 }
