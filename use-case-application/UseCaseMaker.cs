@@ -70,7 +70,7 @@ namespace UseCaseApp
             this.toolbox.AddTool(new LineTool());
             this.toolbox.AddTool(new RectangleTool());
             this.toolbox.AddTool(new EllipseTool());
-            //this.toolbox.AddTool(new ActorTool());
+            this.toolbox.AddTool(new ActorTool());
 
             this.toolbox.AddSeparator();
 

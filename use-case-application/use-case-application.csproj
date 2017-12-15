@@ -47,6 +47,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Actor.cs" />
+    <Compile Include="ActorTool.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="RedoTool.cs">
       <SubType>Component</SubType>
     </Compile>
