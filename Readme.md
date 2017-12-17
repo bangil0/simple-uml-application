@@ -1,10 +1,9 @@
 ## To-do
 ### Belum dikerjakan
-- [ ] implementasi composite pattern
 
 ### Sedang dikerjakan
 - [x] buat text --n
-- [x] buat obyek aktor --s
+- [x] implementasi composite pattern
 
 ### Sudah dikerjakan
 - [x] implementasi state pattern (preview, edit, static state)
@@ -19,6 +18,7 @@
 - [x] Hapus object
 - [x] implementasi memento pattern
 - [x] buat obyek bisa diresize (sort of)
+- [x] buat obyek aktor
 
 # Use Case Diagramming Tool
 Aplikasi ini merupakan tools untuk membuat diagram <b>Use Case</b>. Fitur aplikasi ini adalah dapat memilih komponen diagram use case dengan cara drag and drop.
