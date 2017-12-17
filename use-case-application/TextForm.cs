@@ -24,7 +24,7 @@ namespace UseCaseApp
 
         private void okButtonClick(object sender, EventArgs e)
         {
-
+            //editText.Text = textInput.Text;
         }
 
         private void cancelButtonClick(object sender, EventArgs e)
