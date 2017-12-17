@@ -30,6 +30,8 @@ namespace UseCaseApp
         {
             this.X = x;
             this.Y = y;
+            this.Width = 30;
+            this.Height = 80;
         }
 
         public Actor(int x, int y, int width, int height) : this(x, y)
