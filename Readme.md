@@ -38,7 +38,8 @@ Hal yang diperhatikan ketika melakukan melakukan `push`:
 ## Aturan Penulisan Kode
 - Nama class dan method menggunakan `PascalCasing` contohnya : 
 ```C
-public class ClassName(){
+public class ClassName()
+{
     public void MethodName()
     {
         //...
@@ -48,7 +49,8 @@ public class ClassName(){
 - Nama variabel dan parameter menggunakan `CamelCase`
 contohnya :
 ```C
-public class ClassName(){
+public class ClassName()
+{
     public void MethodName(ParameterClass parameterName)
     {
         int variableName;
@@ -57,7 +59,7 @@ public class ClassName(){
 }
 ```
 - Penamaan kelas menggunakan `kata benda`
-- Untuk class interface penamaannya menggunakan penambahan prefix `i`
+- Untuk class interface penamaannya menggunakan penambahan prefix `I`
 - Penamaan File menggunakan `PascalCasing` dan merepresentasikan isi file tersebut.
 - Penulisan `bracket` sejajar vertical dengan code.
 contohnya:
