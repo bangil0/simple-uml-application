@@ -5,7 +5,6 @@ using System.Drawing;
 using System.Drawing.Drawing2D;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 
 namespace UseCaseApp
 {
@@ -23,6 +22,7 @@ namespace UseCaseApp
         {
             this.pen = new Pen(Color.Black);
             pen.Width = 1.5f;
+
             drawingObjects = new List<ObjectShape>();
         }
 
@@ -66,9 +66,9 @@ namespace UseCaseApp
         {
             GetGraphics().DrawEllipse(this.pen, X, Y, 30, 30); //kepala
             GetGraphics().DrawLine(this.pen, X + 15, Y + 30, X + 15, Y + 60); //badan
+            GetGraphics().DrawLine(this.pen, X - 5, Y + 45, X + 35, Y + 45); //tangan
             GetGraphics().DrawLine(this.pen, X + 15, Y + 60, X - 5, Y + 80); //kaki kiri
             GetGraphics().DrawLine(this.pen, X + 15, Y + 60, X + 35, Y + 80); //kaki kanan
-            GetGraphics().DrawLine(this.pen, X - 5, Y + 45, X + 35, Y + 45); //tangan
         }
 
         public override void RenderOnPreview()
@@ -124,12 +124,16 @@ namespace UseCaseApp
         public override object Clone()
         {
             Actor objCopy = new Actor();
+
             objCopy.X = this.X;
             objCopy.Y = this.Y;
+
             objCopy.Width = this.Width;
             objCopy.Height = this.Height;
             objCopy.pen = this.pen;
+
             objCopy.ChangeState(StaticState.GetInstance());
+
             return objCopy;
         }
 
