@@ -21,10 +21,9 @@ namespace UseCaseApp
 
         public Actor()
         {
-            //this.pen = new Pen(Color.Black);
-            //pen.Width = 1.5f;
+            this.pen = new Pen(Color.Black);
+            pen.Width = 1.5f;
             drawingObjects = new List<ObjectShape>();
-
         }
 
         public Actor(int x, int y) : this()
@@ -63,19 +62,52 @@ namespace UseCaseApp
             return true;
         }
 
-        public override void RenderOnEditingView()
+        public void DrawShape()
         {
-           
+            GetGraphics().DrawEllipse(this.pen, X, Y, 30, 30); //kepala
+            GetGraphics().DrawLine(this.pen, X + 15, Y + 30, X + 15, Y + 60); //badan
+            GetGraphics().DrawLine(this.pen, X + 15, Y + 60, X - 5, Y + 80); //kaki kiri
+            GetGraphics().DrawLine(this.pen, X + 15, Y + 60, X + 35, Y + 80); //kaki kanan
+            GetGraphics().DrawLine(this.pen, X - 5, Y + 45, X + 35, Y + 45); //tangan
         }
 
         public override void RenderOnPreview()
         {
+            this.pen.Color = Color.Red;
+            this.pen.DashStyle = DashStyle.DashDot;
+            this.DrawShape();
 
+            foreach (ObjectShape obj in drawingObjects)
+            {
+                obj.SetGraphics(GetGraphics());
+                obj.RenderOnPreview();
+            }
         }
 
         public override void RenderOnStaticView()
         {
-            //throw new NotImplementedException();
+            this.pen.Color = Color.Black;
+            this.pen.DashStyle = DashStyle.Solid;
+            this.DrawShape();
+
+            foreach (ObjectShape obj in drawingObjects)
+            {
+                obj.SetGraphics(GetGraphics());
+                obj.RenderOnStaticView();
+            }
+        }
+
+        public override void RenderOnEditingView()
+        {
+            this.pen.Color = Color.Blue;
+            this.pen.DashStyle = DashStyle.Solid;
+            this.DrawShape();
+
+            foreach (ObjectShape obj in drawingObjects)
+            {
+                obj.SetGraphics(GetGraphics());
+                obj.RenderOnEditingView();
+            }
         }
 
         public override void Translate(int x, int y, int xAmount, int yAmount)
