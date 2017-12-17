@@ -30,8 +30,8 @@ namespace UseCaseApp
         {
             this.X = x;
             this.Y = y;
-            this.Width = 30;
-            this.Height = 80;
+            this.Width = 20;
+            this.Height = 60;
         }
 
         public Actor(int x, int y, int width, int height) : this(x, y)
@@ -66,11 +66,11 @@ namespace UseCaseApp
 
         public void DrawShape()
         {
-            GetGraphics().DrawEllipse(this.pen, X, Y, 30, 30); //kepala
-            GetGraphics().DrawLine(this.pen, X + 15, Y + 30, X + 15, Y + 60); //badan
-            GetGraphics().DrawLine(this.pen, X - 5, Y + 45, X + 35, Y + 45); //tangan
-            GetGraphics().DrawLine(this.pen, X + 15, Y + 60, X - 5, Y + 80); //kaki kiri
-            GetGraphics().DrawLine(this.pen, X + 15, Y + 60, X + 35, Y + 80); //kaki kanan
+            GetGraphics().DrawEllipse(this.pen, X, Y, 20, 20); //kepala
+            GetGraphics().DrawLine(this.pen, X + 10, Y + 20, X + 10, Y + 40); //badan
+            GetGraphics().DrawLine(this.pen, X - 5, Y + 30, X + 25, Y + 30); //tangan
+            GetGraphics().DrawLine(this.pen, X + 10, Y + 40, X - 5, Y + 60); //kaki kiri
+            GetGraphics().DrawLine(this.pen, X + 10, Y + 40, X + 25, Y + 60); //kaki kanan
         }
 
         public override void RenderOnPreview()

@@ -26,7 +26,7 @@ namespace UseCaseApp
             FontFamily fontFamily = new FontFamily("Arial");
             font = new Font(
                fontFamily,
-               16,
+               12,
                FontStyle.Regular,
                GraphicsUnit.Pixel);
         }

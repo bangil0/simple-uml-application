@@ -103,6 +103,7 @@ namespace UseCaseApp
             Text text = new Text();
             text.X = e.X;
             text.Y = e.Y;
+            
             text.Value = "Insert Text";
             canvas.AddDrawingObject(text);
             Debug.WriteLine("selection tool double click");
