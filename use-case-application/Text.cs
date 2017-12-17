@@ -17,6 +17,7 @@ namespace UseCaseApp
         private Brush brush;
         private Font font;
         private SizeF textSize;
+        internal string Cancel;
 
         public Text()
         {
