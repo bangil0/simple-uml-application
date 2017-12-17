@@ -132,6 +132,9 @@ namespace UseCaseApp
             objCopy.Height = this.Height;
             objCopy.pen = this.pen;
 
+            objCopy.drawingObjects = this.drawingObjects;
+            objCopy.ID = this.ID;
+
             objCopy.ChangeState(StaticState.GetInstance());
 
             return objCopy;

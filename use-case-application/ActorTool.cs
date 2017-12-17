@@ -102,10 +102,10 @@ namespace UseCaseApp
         {
             actor.ChangeState(EditState.GetInstance());
 
-            if (this.actor.Height > 0 && this.actor.Width > 0)
-            {
+            //if (this.actor.Height > 0 && this.actor.Width > 0)
+            //{
                 canvas.initUndoRedo();
-            }
+            //}
         }
 
         public void ToolMouseDoubleClick(object sender, MouseEventArgs e)
