@@ -59,7 +59,7 @@ public class ClassName()
 }
 ```
 - Penamaan kelas menggunakan `kata benda`
-- Untuk class interface penamaannya menggunakan penambahan prefix `i`
+- Untuk class interface penamaannya menggunakan penambahan prefix `I`
 - Penamaan File menggunakan `PascalCasing` dan merepresentasikan isi file tersebut.
 - Penulisan `bracket` sejajar vertical dengan code.
 contohnya:
