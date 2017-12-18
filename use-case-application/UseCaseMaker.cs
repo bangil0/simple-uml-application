@@ -28,16 +28,6 @@ namespace UseCaseApp
 
         private void InitUI()
         {
-            //Debug.WriteLine("Initializing UI objects.");
-            //this.Menu = new MainMenu();
-            //MenuItem undo = new MenuItem("Undo");
-            //this.Menu.MenuItems.Add(undo);
-            //MenuItem redo = new MenuItem("Redo");
-            //this.Menu.MenuItems.Add(redo);
-
-            //undo.Click += new System.EventHandler(this.undo_Click);
-            //redo.Click += new System.EventHandler(this.redo_Click);
-
             #region Editor and Canvas
 
             Debug.WriteLine("Loading canvas...");
@@ -110,20 +100,6 @@ namespace UseCaseApp
             }
         }
 
-        //private void undo_Click(object sender, System.EventArgs e)
-        //{
-        //    undoRedoObj.Undo(1);
-        //    ICanvas canvas = this.editor.GetSelectedCanvas();
-        //    canvas.Repaint();
-        //}
-
-        //private void redo_Click(object sender, System.EventArgs e)
-        //{
-        //    undoRedoObj.Redo(1);
-        //    ICanvas canvas = this.editor.GetSelectedCanvas();
-        //    canvas.Repaint();
-        //}
-
         void Form1_KeyPress(object sender, KeyEventArgs e)
         {
             Debug.WriteLine("KEY" + e.KeyCode);
@@ -141,28 +117,5 @@ namespace UseCaseApp
                 canvas.Repaint();
             }
         }
-
-        //void UnDoObject_EnableDisableUndoRedoFeature(object sender, EventArgs e)
-        //{
-        //    if (undoRedoObj.IsUndoPossible())
-        //    {
-
-        //        btnUndo.IsEnabled = true;
-        //    }
-        //    else
-        //    {
-        //        btnUndo.IsEnabled = false;
-
-        //    }
-
-        //    if (undoRedoObj.IsRedoPossible())
-        //    {
-        //        btnRedo.IsEnabled = true;
-        //    }
-        //    else
-        //    {
-        //        btnRedo.IsEnabled = false;
-        //    }
-        //}
     }
 }
