@@ -39,28 +39,6 @@ namespace UseCaseApp
 
         public override bool Intersect(int xTest, int yTest)
         {
-            /*
-            Text text = new Text();
-            if ((xTest >= X && xTest <= X + textSize.Width) && (yTest >= Y && yTest <= Y + textSize.Height))
-            {
-                string input = Microsoft.VisualBasic.Interaction.InputBox("Input Text", "Text Box", text.Value, 0, 0);
-
-                //Text text = new Text();
-                text.X = xTest;
-                text.Y = yTest;
-
-                text.Value = input;
-                canvas.RemoveDrawingObject(text);
-                canvas.AddDrawingObject(text);
-                Debug.WriteLine("selection tool double click");
-
-                canvas.initUndoRedo();
-
-                Debug.WriteLine("Object " + ID + " is selected.");
-                return true;
-            }
-            return false;*/
-
             if ((xTest >= X && xTest <= X + textSize.Width) && (yTest >= Y && yTest <= Y + textSize.Height))
             {
                 Debug.WriteLine("Object " + ID + " is selected.");
@@ -125,7 +103,6 @@ namespace UseCaseApp
         public override string GetText()
         {
             return Value;
-            //throw new NotImplementedException();
         }
 
         public override void SetText(string value)
