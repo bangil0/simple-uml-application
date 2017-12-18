@@ -21,9 +21,6 @@ C:\Users\DELL\Desktop\hasilC#\KPL-FP-UseCase\use-case-application\bin\Debug\Wind
 C:\Users\DELL\Desktop\hasilC#\KPL-FP-UseCase\use-case-application\bin\Debug\WindowsFormsApp2.exe
 C:\Users\DELL\Desktop\hasilC#\KPL-FP-UseCase\use-case-application\bin\Debug\WindowsFormsApp2.pdb
 C:\Users\DELL\Desktop\hasilC#\KPL-FP-UseCase\use-case-application\obj\Debug\use-case-application.csprojResolveAssemblyReference.cache
-C:\Users\DELL\Desktop\hasilC#\KPL-FP-UseCase\use-case-application\obj\Debug\WindowsFormsApp2.Form1.resources
-C:\Users\DELL\Desktop\hasilC#\KPL-FP-UseCase\use-case-application\obj\Debug\WindowsFormsApp2.IconSet.resources
-C:\Users\DELL\Desktop\hasilC#\KPL-FP-UseCase\use-case-application\obj\Debug\WindowsFormsApp2.Properties.Resources.resources
 C:\Users\DELL\Desktop\hasilC#\KPL-FP-UseCase\use-case-application\obj\Debug\use-case-application.csproj.GenerateResource.Cache
 C:\Users\DELL\Desktop\hasilC#\KPL-FP-UseCase\use-case-application\obj\Debug\WindowsFormsApp2.exe
 C:\Users\DELL\Desktop\hasilC#\KPL-FP-UseCase\use-case-application\obj\Debug\WindowsFormsApp2.pdb
@@ -52,3 +49,7 @@ C:\Users\Salman Rameli\Documents\Visual Studio 2017\Projects\use-case-applicatio
 C:\Users\Salman Rameli\Documents\Visual Studio 2017\Projects\use-case-application\use-case-application\obj\Debug\UseCaseApp.Properties.Resources.resources
 E:\Kuliah\Semester 7\KPL\simple-uml-application\use-case-application\obj\Debug\UseCaseApp.UseCaseMaker.resources
 E:\Kuliah\Semester 7\KPL\simple-uml-application\use-case-application\obj\Debug\UseCaseApp.TextForm.resources
+C:\Users\DELL\Desktop\hasilC#\KPL-FP-UseCase\use-case-application\obj\Debug\UseCaseApp.TextForm.resources
+C:\Users\DELL\Desktop\hasilC#\KPL-FP-UseCase\use-case-application\obj\Debug\UseCaseApp.UseCaseMaker.resources
+C:\Users\DELL\Desktop\hasilC#\KPL-FP-UseCase\use-case-application\obj\Debug\UseCaseApp.IconSet.resources
+C:\Users\DELL\Desktop\hasilC#\KPL-FP-UseCase\use-case-application\obj\Debug\UseCaseApp.Properties.Resources.resources
