@@ -10,6 +10,13 @@ namespace UseCaseApp
 {
     public class Actor : ObjectShape
     {
+        private Ellipse ellipse;
+        private LineSegment LineBody;
+        private LineSegment LineHand;
+        private LineSegment LineRightLeg;
+        private LineSegment LineLeftLeg;
+
+        
         public int X { get; set; }
         public int Y { get; set; }
         public int Width { get; set; }
@@ -17,6 +24,9 @@ namespace UseCaseApp
 
         private Pen pen;
         private List<ObjectShape> drawingObjects;
+
+        private Point startPoint;
+        private Point endPoint;
 
         public Actor()
         {
@@ -32,6 +42,37 @@ namespace UseCaseApp
             this.Y = y;
             this.Width = 20;
             this.Height = 60;
+            this.ellipse = new Ellipse(X, Y, 20, 20);
+
+            startPoint.X = X + 10;
+            startPoint.Y = Y + 20;
+            endPoint.X = X + 10;
+            endPoint.Y = Y + 40;
+            this.LineBody = new LineSegment(startPoint, endPoint);
+
+            startPoint.X = X - 5;
+            startPoint.Y = Y + 30;
+            endPoint.X = X + 25;
+            endPoint.Y = Y + 30;
+            this.LineHand = new LineSegment(startPoint, endPoint);
+
+            startPoint.X = X + 10;
+            startPoint.Y = Y + 40;
+            endPoint.X = X - 5;
+            endPoint.Y = Y + 60;
+            this.LineLeftLeg = new LineSegment(startPoint, endPoint);
+
+            startPoint.X = X + 10;
+            startPoint.Y = Y + 40;
+            endPoint.X = X + 25;
+            endPoint.Y = Y + 60;
+            this.LineRightLeg = new LineSegment(startPoint, endPoint);
+
+            this.Add(ellipse);
+            this.Add(LineBody);
+            this.Add(LineHand);
+            this.Add(LineLeftLeg);
+            this.Add(LineRightLeg);
         }
 
         public Actor(int x, int y, int width, int height) : this(x, y)
@@ -66,18 +107,18 @@ namespace UseCaseApp
 
         public void DrawShape()
         {
-            GetGraphics().DrawEllipse(this.pen, X, Y, 20, 20); //kepala
-            GetGraphics().DrawLine(this.pen, X + 10, Y + 20, X + 10, Y + 40); //badan
-            GetGraphics().DrawLine(this.pen, X - 5, Y + 30, X + 25, Y + 30); //tangan
-            GetGraphics().DrawLine(this.pen, X + 10, Y + 40, X - 5, Y + 60); //kaki kiri
-            GetGraphics().DrawLine(this.pen, X + 10, Y + 40, X + 25, Y + 60); //kaki kanan
+            //GetGraphics().DrawEllipse(this.pen, X, Y, 20, 20); //kepala
+            //GetGraphics().DrawLine(this.pen, X + 10, Y + 20, X + 10, Y + 40); //badan
+            //GetGraphics().DrawLine(this.pen, X - 5, Y + 30, X + 25, Y + 30); //tangan
+            //GetGraphics().DrawLine(this.pen, X + 10, Y + 40, X - 5, Y + 60); //kaki kiri
+            //GetGraphics().DrawLine(this.pen, X + 10, Y + 40, X + 25, Y + 60); //kaki kanan
         }
 
         public override void RenderOnPreview()
         {
             this.pen.Color = Color.Red;
             this.pen.DashStyle = DashStyle.DashDot;
-            this.DrawShape();
+            //this.DrawShape();
 
             foreach (ObjectShape obj in drawingObjects)
             {
@@ -90,7 +131,7 @@ namespace UseCaseApp
         {
             this.pen.Color = Color.Black;
             this.pen.DashStyle = DashStyle.Solid;
-            this.DrawShape();
+            //this.DrawShape();
 
             foreach (ObjectShape obj in drawingObjects)
             {
@@ -103,7 +144,7 @@ namespace UseCaseApp
         {
             this.pen.Color = Color.Blue;
             this.pen.DashStyle = DashStyle.Solid;
-            this.DrawShape();
+            //this.DrawShape();
 
             foreach (ObjectShape obj in drawingObjects)
             {
