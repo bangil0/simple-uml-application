@@ -141,5 +141,16 @@ namespace UseCaseApp
 
             return objRectCopy;
         }
+
+        public override string GetText()
+        {
+            return "";
+            //throw new NotImplementedException();
+        }
+
+        public override void SetText(string value)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

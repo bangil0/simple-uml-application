@@ -41,6 +41,8 @@ namespace UseCaseApp
         public abstract void RenderOnPreview();
         public abstract void RenderOnEditingView();
         public abstract void RenderOnStaticView();
+        public abstract string GetText();
+        public abstract void SetText(string value);
 
         public void ChangeState(DrawingState state)
         {
