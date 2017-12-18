@@ -14,6 +14,8 @@ namespace UseCaseApp
         private ObjectShape selectedObject;
         private int xInitial;
         private int yInitial;
+        private int xAmount;
+        private int yAmount;
 
         public Cursor Cursor
         {
@@ -48,6 +50,8 @@ namespace UseCaseApp
         {
             this.xInitial = e.X;
             this.yInitial = e.Y;
+            this.xAmount = 0;
+            this.yAmount = 0;
 
             if (e.Button == MouseButtons.Left && canvas != null)
             {
@@ -68,8 +72,8 @@ namespace UseCaseApp
                     }
                     else
                     {
-                        int xAmount = e.X - xInitial;
-                        int yAmount = e.Y - yInitial;
+                        this.xAmount = e.X - xInitial;
+                        this.yAmount = e.Y - yInitial;
 
                         xInitial = e.X;
                         yInitial = e.Y;
@@ -89,11 +93,12 @@ namespace UseCaseApp
                     if (canvas.SelectObjectOnCorner(xInitial, yInitial))
                     {
                         selectedObject.ChangeState(EditState.GetInstance());
-
                         selectedObject.Resize(e.X, e.Y);
                     }
-
-                    canvas.initUndoRedo();
+                    if (this.xAmount > 0 || this.yAmount > 0)
+                    {
+                        canvas.initUndoRedo();
+                    }
                 }
             }
         }
@@ -111,6 +116,7 @@ namespace UseCaseApp
                 if (input.Length > 0)
                 {
                     this.selectedObject.SetText(input.ToString());
+                    canvas.initUndoRedo();
                 }
             }
             else
@@ -122,11 +128,10 @@ namespace UseCaseApp
                 canvas.AddDrawingObject(text);
                 text.X = e.X;
                 text.Y = e.Y;
+                canvas.initUndoRedo();
             }
            
             Debug.WriteLine("selection tool double click");
-
-            canvas.initUndoRedo();
         }
 
         public void ToolKeyUp(object sender, KeyEventArgs e)
