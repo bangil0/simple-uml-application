@@ -1,0 +1,11 @@
+D:\Kuliah\Semester 7\KPL\KPLL\simple-uml-application\use-case-application\bin\Debug\WindowsFormsApp2.exe.config
+D:\Kuliah\Semester 7\KPL\KPLL\simple-uml-application\use-case-application\bin\Debug\WindowsFormsApp2.exe
+D:\Kuliah\Semester 7\KPL\KPLL\simple-uml-application\use-case-application\bin\Debug\WindowsFormsApp2.pdb
+D:\Kuliah\Semester 7\KPL\KPLL\simple-uml-application\use-case-application\obj\Debug\use-case-application.csprojResolveAssemblyReference.cache
+D:\Kuliah\Semester 7\KPL\KPLL\simple-uml-application\use-case-application\obj\Debug\UseCaseApp.TextForm.resources
+D:\Kuliah\Semester 7\KPL\KPLL\simple-uml-application\use-case-application\obj\Debug\UseCaseApp.UseCaseMaker.resources
+D:\Kuliah\Semester 7\KPL\KPLL\simple-uml-application\use-case-application\obj\Debug\UseCaseApp.IconSet.resources
+D:\Kuliah\Semester 7\KPL\KPLL\simple-uml-application\use-case-application\obj\Debug\UseCaseApp.Properties.Resources.resources
+D:\Kuliah\Semester 7\KPL\KPLL\simple-uml-application\use-case-application\obj\Debug\use-case-application.csproj.GenerateResource.Cache
+D:\Kuliah\Semester 7\KPL\KPLL\simple-uml-application\use-case-application\obj\Debug\WindowsFormsApp2.exe
+D:\Kuliah\Semester 7\KPL\KPLL\simple-uml-application\use-case-application\obj\Debug\WindowsFormsApp2.pdb

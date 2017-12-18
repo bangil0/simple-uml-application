@@ -120,16 +120,11 @@ namespace UseCaseApp
                     }
                 }
             }
-
         }
 
         public void ToolMouseDoubleClick(object sender, MouseEventArgs e)
         {
             Text text = new UseCaseApp.Text();
         }
-
     }
-
-
-
 }

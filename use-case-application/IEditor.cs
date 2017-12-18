@@ -8,8 +8,6 @@ namespace UseCaseApp
 {
     public interface IEditor
     {
-        //DefaultToolbox Toolbox { get; set; }
-
         IToolbox Toolbox { get; set; }
 
         void AddCanvas(ICanvas canvas);

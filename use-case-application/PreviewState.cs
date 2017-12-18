@@ -27,7 +27,7 @@ namespace UseCaseApp
 
         public override void Select(ObjectShape obj)
         {
-            //obj.ChangeState(EditState.GetInstance());
+            
         }
     }
 }
