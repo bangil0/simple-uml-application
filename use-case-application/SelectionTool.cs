@@ -101,7 +101,10 @@ namespace UseCaseApp
         public void ToolMouseDoubleClick(object sender, MouseEventArgs e)
         {
             Text text = new Text();
-            text.Value = "Untitled";
+            text.X = e.X;
+            text.Y = e.Y;
+            
+            text.Value = "Insert Text";
             canvas.AddDrawingObject(text);
             Debug.WriteLine("selection tool double click");
             canvas.initUndoRedo();

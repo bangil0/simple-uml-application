@@ -128,7 +128,8 @@ namespace UseCaseApp
 
         public override void Resize(int x, int y)
         {
-            throw new NotImplementedException();
+            //Endpoint.X = x;
+            //Endpoint.Y = y;
         }
     }
 }

@@ -9,6 +9,8 @@ namespace UseCaseApp
     {
         private ICanvas canvas;
         private Actor actor;
+        int initX;
+        int initY;
 
         public Cursor Cursor
         {
@@ -43,10 +45,11 @@ namespace UseCaseApp
         {
             if (e.Button == MouseButtons.Left)
             {
+                initX = e.X;
+                initY = e.Y;
+
                 actor = new Actor(e.X, e.Y);
                 this.canvas.AddDrawingObject(this.actor);
-                //this.Image = Image.FromFile("E:\\Kuliah\\Semester 7\\KPL\\simple-uml-application\\use-case-application\\resources\\actor.png");
-
             }
         }
 
@@ -56,13 +59,40 @@ namespace UseCaseApp
             {
                 if (this.actor != null)
                 {
-                    int width = e.X - this.actor.X;
-                    int height = e.Y - this.actor.Y;
-
-                    if (width > 0 && height > 0)
+                    if (e.X > initX && e.Y > initY)
                     {
-                        this.actor.Width = width;
-                        this.actor.Height = height;
+                        actor.X = e.X;
+                        actor.Y = e.Y;
+
+                        actor.Width = e.X - actor.X;
+                        actor.Height = e.Y - actor.Y;
+                    }
+
+                    if (e.X < initX && e.Y > initY)
+                    {
+                        actor.X = e.X;
+                        actor.Y = initY;
+
+                        actor.Width = initX - actor.X;
+                        actor.Height = e.Y - actor.Y;
+                    }
+
+                    if (e.X > initX && e.Y < initY)
+                    {
+                        actor.X = initX;
+                        actor.Y = e.Y;
+
+                        actor.Width = e.X - actor.X;
+                        actor.Height = initY - actor.Y;
+                    }
+
+                    if (e.X < initX && e.Y < initY)
+                    {
+                        actor.X = e.X;
+                        actor.Y = e.Y;
+
+                        actor.Width = initX - actor.X;
+                        actor.Height = initY - actor.Y;
                     }
                 }
             }
@@ -70,7 +100,12 @@ namespace UseCaseApp
 
         public void ToolMouseUp(object sender, MouseEventArgs e)
         {
-            actor.ChangeState(PreviewState.GetInstance());
+            actor.ChangeState(EditState.GetInstance());
+
+            //if (this.actor.Height > 0 && this.actor.Width > 0)
+            //{
+                canvas.initUndoRedo();
+            //}
         }
 
         public void ToolMouseDoubleClick(object sender, MouseEventArgs e)

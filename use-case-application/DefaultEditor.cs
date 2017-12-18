@@ -40,7 +40,7 @@ namespace UseCaseApp
         public void AddCanvas(ICanvas canvas)
         {
             canvases.Add(canvas);
-            TabPage tabPage = new TabPage("Page");
+            TabPage tabPage = new TabPage("Workspace");
             tabPage.Controls.Add((Control)canvas);
             this.Controls.Add(tabPage);
             this.SelectedTab = tabPage;

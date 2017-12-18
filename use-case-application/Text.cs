@@ -17,6 +17,7 @@ namespace UseCaseApp
         private Brush brush;
         private Font font;
         private SizeF textSize;
+        internal string Cancel;
 
         public Text()
         {
@@ -25,7 +26,7 @@ namespace UseCaseApp
             FontFamily fontFamily = new FontFamily("Arial");
             font = new Font(
                fontFamily,
-               16,
+               12,
                FontStyle.Regular,
                GraphicsUnit.Pixel);
         }

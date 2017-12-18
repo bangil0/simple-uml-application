@@ -61,7 +61,6 @@ namespace UseCaseApp
                 obj.SetGraphics(GetGraphics());
                 obj.RenderOnEditingView();
             }
-
         }
 
         public override void RenderOnPreview()

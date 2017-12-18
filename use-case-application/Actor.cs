@@ -5,7 +5,6 @@ using System.Drawing;
 using System.Drawing.Drawing2D;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 
 namespace UseCaseApp
 {
@@ -21,16 +20,18 @@ namespace UseCaseApp
 
         public Actor()
         {
-            //this.pen = new Pen(Color.Black);
-            //pen.Width = 1.5f;
-            drawingObjects = new List<ObjectShape>();
+            this.pen = new Pen(Color.Black);
+            pen.Width = 1.5f;
 
+            drawingObjects = new List<ObjectShape>();
         }
 
         public Actor(int x, int y) : this()
         {
             this.X = x;
             this.Y = y;
+            this.Width = 20;
+            this.Height = 60;
         }
 
         public Actor(int x, int y, int width, int height) : this(x, y)
@@ -63,19 +64,52 @@ namespace UseCaseApp
             return true;
         }
 
-        public override void RenderOnEditingView()
+        public void DrawShape()
         {
-           
+            GetGraphics().DrawEllipse(this.pen, X, Y, 20, 20); //kepala
+            GetGraphics().DrawLine(this.pen, X + 10, Y + 20, X + 10, Y + 40); //badan
+            GetGraphics().DrawLine(this.pen, X - 5, Y + 30, X + 25, Y + 30); //tangan
+            GetGraphics().DrawLine(this.pen, X + 10, Y + 40, X - 5, Y + 60); //kaki kiri
+            GetGraphics().DrawLine(this.pen, X + 10, Y + 40, X + 25, Y + 60); //kaki kanan
         }
 
         public override void RenderOnPreview()
         {
+            this.pen.Color = Color.Red;
+            this.pen.DashStyle = DashStyle.DashDot;
+            this.DrawShape();
 
+            foreach (ObjectShape obj in drawingObjects)
+            {
+                obj.SetGraphics(GetGraphics());
+                obj.RenderOnPreview();
+            }
         }
 
         public override void RenderOnStaticView()
         {
-            //throw new NotImplementedException();
+            this.pen.Color = Color.Black;
+            this.pen.DashStyle = DashStyle.Solid;
+            this.DrawShape();
+
+            foreach (ObjectShape obj in drawingObjects)
+            {
+                obj.SetGraphics(GetGraphics());
+                obj.RenderOnStaticView();
+            }
+        }
+
+        public override void RenderOnEditingView()
+        {
+            this.pen.Color = Color.Blue;
+            this.pen.DashStyle = DashStyle.Solid;
+            this.DrawShape();
+
+            foreach (ObjectShape obj in drawingObjects)
+            {
+                obj.SetGraphics(GetGraphics());
+                obj.RenderOnEditingView();
+            }
         }
 
         public override void Translate(int x, int y, int xAmount, int yAmount)
@@ -92,12 +126,19 @@ namespace UseCaseApp
         public override object Clone()
         {
             Actor objCopy = new Actor();
+
             objCopy.X = this.X;
             objCopy.Y = this.Y;
+
             objCopy.Width = this.Width;
             objCopy.Height = this.Height;
             objCopy.pen = this.pen;
+
+            objCopy.drawingObjects = this.drawingObjects;
+            objCopy.ID = this.ID;
+
             objCopy.ChangeState(StaticState.GetInstance());
+
             return objCopy;
         }
 
