@@ -51,3 +51,4 @@ C:\Users\Salman Rameli\Documents\Visual Studio 2017\Projects\use-case-applicatio
 C:\Users\Salman Rameli\Documents\Visual Studio 2017\Projects\use-case-application\use-case-application\obj\Debug\UseCaseApp.IconSet.resources
 C:\Users\Salman Rameli\Documents\Visual Studio 2017\Projects\use-case-application\use-case-application\obj\Debug\UseCaseApp.Properties.Resources.resources
 E:\Kuliah\Semester 7\KPL\simple-uml-application\use-case-application\obj\Debug\UseCaseApp.UseCaseMaker.resources
+E:\Kuliah\Semester 7\KPL\simple-uml-application\use-case-application\obj\Debug\UseCaseApp.TextForm.resources
