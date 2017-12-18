@@ -2,9 +2,9 @@
 ### Belum dikerjakan
 
 ### Sedang dikerjakan
-- [x] implementasi composite pattern
 
 ### Sudah dikerjakan
+- [x] implementasi composite pattern
 - [x] buat text
 - [x] implementasi state pattern (preview, edit, static state)
 - [x] buat bentuk primitif
