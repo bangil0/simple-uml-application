@@ -125,7 +125,7 @@ namespace UseCaseApp
 
         public void ToolMouseDoubleClick(object sender, MouseEventArgs e)
         {
-            throw new NotImplementedException();
+            Text text = new UseCaseApp.Text();
         }
 
     }

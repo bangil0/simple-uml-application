@@ -106,21 +106,24 @@ namespace UseCaseApp
             
             if (selectedObject != null && selectedObject is Text)
             {
-                input = Microsoft.VisualBasic.Interaction.InputBox("Input Text", "Text Box", this.selectedObject.GetText(), 0, 0);
-                this.selectedObject.SetText(input.ToString());
+                input = Microsoft.VisualBasic.Interaction.InputBox("Input Text", "Text Box", this.selectedObject.GetText(), 500, 300);
+
+                if (input.Length > 0)
+                {
+                    this.selectedObject.SetText(input.ToString());
+                }
             }
             else
             {
                 Text text = new Text();
-                input = Microsoft.VisualBasic.Interaction.InputBox("Input Text", "Text Box", "", 0, 0);
+                input = Microsoft.VisualBasic.Interaction.InputBox("Input Text", "Text Box", "", 500, 300);
                 text.Value = input;
+
                 canvas.AddDrawingObject(text);
                 text.X = e.X;
                 text.Y = e.Y;
-
             }
            
-
             Debug.WriteLine("selection tool double click");
 
             canvas.initUndoRedo();
