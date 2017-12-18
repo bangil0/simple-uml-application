@@ -117,10 +117,8 @@ namespace UseCaseApp
                 canvas.AddDrawingObject(text);
                 text.X = e.X;
                 text.Y = e.Y;
-
             }
            
-
             Debug.WriteLine("selection tool double click");
 
             canvas.initUndoRedo();
