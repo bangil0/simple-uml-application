@@ -10,7 +10,7 @@ namespace UseCaseApp
     {
         private ITool activeTool;
         private List<ObjectShape> objectShapes = new List<ObjectShape>();
-        private UndoRedo unDoObject;
+        private UndoRedo undoObject;
 
         public DefaultCanvas()
         {
@@ -19,7 +19,7 @@ namespace UseCaseApp
 
         public void setUndoRedoObj(UndoRedo undoRedoObj)
         {
-            this.unDoObject = undoRedoObj;
+            this.undoObject = undoRedoObj;
         }
 
         private void Init()
@@ -119,7 +119,7 @@ namespace UseCaseApp
         public void RemoveDrawingObject(ObjectShape drawingObject)
         {
             this.objectShapes.Remove(drawingObject);
-            unDoObject.SetStateForUndoRedo();
+            undoObject.SetStateForUndoRedo();
         }
 
         public ObjectShape GetObjectAt(int x, int y)
@@ -179,7 +179,7 @@ namespace UseCaseApp
 
         public void initUndoRedo()
         {
-            this.unDoObject.SetStateForUndoRedo();
+            this.undoObject.SetStateForUndoRedo();
         }
     }
 }
