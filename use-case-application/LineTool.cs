@@ -40,7 +40,7 @@ namespace UseCaseApp
 
         public void ToolMouseDown(object sender, MouseEventArgs e)
         {
-            if(e.Button == MouseButtons.Left)
+            if (e.Button == MouseButtons.Left)
             {
                 lineSegment = new LineSegment(new System.Drawing.Point(e.X, e.Y));
                 lineSegment.Endpoint = new System.Drawing.Point(e.X, e.Y);
@@ -62,7 +62,7 @@ namespace UseCaseApp
         public void ToolMouseUp(object sender, MouseEventArgs e)
         {
             lineSegment.ChangeState(EditState.GetInstance());
-            if(this.lineSegment.Startpoint != this.lineSegment.Endpoint)
+            if (this.lineSegment.Startpoint != this.lineSegment.Endpoint)
             {
                 canvas.initUndoRedo();
             }

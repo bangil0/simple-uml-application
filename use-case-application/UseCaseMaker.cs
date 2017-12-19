@@ -76,11 +76,11 @@ namespace UseCaseApp
 
         private void Toolbox_ToolClicked(ITool tool)
         {
-            if(tool.Name == "undo")
+            if (tool.Name == "undo")
             {
                 undoRedoObj.Undo(1);
             }
-            else if(tool.Name == "redo")
+            else if (tool.Name == "redo")
             {
                 undoRedoObj.Redo(1);
             }

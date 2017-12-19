@@ -61,7 +61,7 @@ namespace UseCaseApp
 
         public void ToolMouseMove(object sender, MouseEventArgs e)
         {
-            
+
         }
 
         public void ToolMouseUp(object sender, MouseEventArgs e)

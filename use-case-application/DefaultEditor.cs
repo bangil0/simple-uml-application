@@ -59,7 +59,7 @@ namespace UseCaseApp
 
         public void RemoveSelectedCanvas()
         {
-            
+
         }
 
         public void SelectCanvas(ICanvas canvas)

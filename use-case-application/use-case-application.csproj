@@ -163,10 +163,7 @@
     <None Include="resources\actor.png" />
     <None Include="resources\cursor.png" />
     <Content Include="resources\delete.png" />
-    <Content Include="resources\Image1.png" />
     <None Include="resources\rectangle.png" />
-    <None Include="resources\rectangle_tool.png" />
-    <None Include="resources\rectangle_tool.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

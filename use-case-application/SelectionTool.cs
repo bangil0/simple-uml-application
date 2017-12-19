@@ -79,7 +79,7 @@ namespace UseCaseApp
                         yInitial = e.Y;
 
                         selectedObject.Translate(e.X, e.Y, xAmount, yAmount);
-                    }                   
+                    }
                 }
             }
         }
@@ -108,7 +108,7 @@ namespace UseCaseApp
             string input;
             canvas.DeselectAllObjects();
             selectedObject = canvas.SelectObjectAt(e.X, e.Y);
-            
+
             if (selectedObject != null && selectedObject is Text)
             {
                 input = Microsoft.VisualBasic.Interaction.InputBox("Input Text", "Text Box", this.selectedObject.GetText(), 500, 300);
@@ -130,7 +130,7 @@ namespace UseCaseApp
                 text.Y = e.Y;
                 canvas.initUndoRedo();
             }
-           
+
             Debug.WriteLine("selection tool double click");
         }
 

@@ -22,12 +22,12 @@ namespace UseCaseApp.State
 
         public virtual void Deselect(ObjectShape obj)
         {
-            
+
         }
 
         public virtual void Select(ObjectShape obj)
         {
-            
+
         }
     }
 }

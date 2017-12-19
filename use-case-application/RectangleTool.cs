@@ -99,7 +99,7 @@ namespace UseCaseApp.Tools
         {
             rectangle.ChangeState(EditState.GetInstance());
 
-            if(this.rectangle.Height > 0 && this.rectangle.Width > 0)
+            if (this.rectangle.Height > 0 && this.rectangle.Width > 0)
             {
                 canvas.initUndoRedo();
             }

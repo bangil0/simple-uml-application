@@ -15,7 +15,7 @@ namespace UseCaseApp
         private LineSegment LineHand;
         private LineSegment LineRightLeg;
         private LineSegment LineLeftLeg;
-                
+
         public int X { get; set; }
         public int Y { get; set; }
         public int Width { get; set; }
@@ -103,12 +103,12 @@ namespace UseCaseApp
 
             return true;
         }
-       
+
         public override void RenderOnPreview()
         {
             this.pen.Color = Color.Red;
             this.pen.DashStyle = DashStyle.DashDot;
-            
+
             foreach (ObjectShape obj in drawingObjects)
             {
                 obj.SetGraphics(GetGraphics());
@@ -120,7 +120,7 @@ namespace UseCaseApp
         {
             this.pen.Color = Color.Black;
             this.pen.DashStyle = DashStyle.Solid;
-            
+
             foreach (ObjectShape obj in drawingObjects)
             {
                 obj.SetGraphics(GetGraphics());
@@ -177,7 +177,7 @@ namespace UseCaseApp
 
         public override void Resize(int x, int y)
         {
-            
+
         }
 
         public override string GetText()
@@ -187,7 +187,7 @@ namespace UseCaseApp
 
         public override void SetText(string value)
         {
-           
+
         }
     }
 }

@@ -17,7 +17,7 @@ namespace UseCaseApp
         }
 
         public List<ObjectShape> getSavedObject()
-        {            
+        {
             return obj;
         }
     }

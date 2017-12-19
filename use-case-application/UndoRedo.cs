@@ -9,74 +9,64 @@ namespace UseCaseApp
 {
     public class UndoRedo : IUndoRedo
     {
-        MemCaretaker _Caretaker = new MemCaretaker();
-        MemOriginator _MementoOriginator = null;
-        public event EventHandler EnableDisableUndoRedoFeature;
+        MemCaretaker careTaker = new MemCaretaker();
+        MemOriginator mementoOriginator = null;
 
         public UndoRedo(ICanvas container)
         {
-            _MementoOriginator = new MemOriginator(container);
-
+            mementoOriginator = new MemOriginator(container);
         }
+
         public void Undo(int level)
         {
-            Debug.WriteLine("Memento " + _Caretaker.IsUndoPossible());
             MemMemento memento = null;
+
             for (int i = 1; i <= level; i++)
             {
-                memento = _Caretaker.getUndoMemento();
+                memento = careTaker.getUndoMemento();
             }
+
             if (memento != null)
             {
-                _MementoOriginator.setMemento(memento);
-
-            }
-            if (EnableDisableUndoRedoFeature != null)
-            {
-                EnableDisableUndoRedoFeature(null, null);
+                mementoOriginator.setMemento(memento);
             }
         }
 
         public void Redo(int level)
         {
             MemMemento memento = null;
+
             for (int i = 1; i <= level; i++)
             {
-                memento = _Caretaker.getRedoMemento();
+                memento = careTaker.getRedoMemento();
             }
+
             if (memento != null)
             {
-                _MementoOriginator.setMemento(memento);
+                mementoOriginator.setMemento(memento);
 
-            }
-            if (EnableDisableUndoRedoFeature != null)
-            {
-                EnableDisableUndoRedoFeature(null, null);
             }
         }
 
         public void SetStateForUndoRedo()
         {
-            MemMemento memento = _MementoOriginator.getMemento();
-            _Caretaker.InsertMementoForUndoRedo(memento);
-            if (EnableDisableUndoRedoFeature != null)
-            {
-                EnableDisableUndoRedoFeature(null, null);
-            }
+            MemMemento memento = mementoOriginator.getMemento();
+            careTaker.InsertMementoForUndoRedo(memento);
         }
 
         public bool IsUndoPossible()
         {
-            return _Caretaker.IsUndoPossible();
+            return careTaker.IsUndoPossible();
         }
+
         public bool IsRedoPossible()
         {
-            return _Caretaker.IsRedoPossible();
+            return careTaker.IsRedoPossible();
         }
 
         public void getUndoLevel()
         {
-            Debug.WriteLine("Undo Level " + _Caretaker.getUndoLevel());
+            Debug.WriteLine("Undo Level " + careTaker.getUndoLevel());
         }
     }
 }

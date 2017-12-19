@@ -129,7 +129,7 @@ namespace UseCaseApp
 
         public override void Resize(int x, int y)
         {
-            
+
         }
 
         public override string GetText()

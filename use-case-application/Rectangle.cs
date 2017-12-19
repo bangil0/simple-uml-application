@@ -94,7 +94,7 @@ namespace UseCaseApp
                 return true;
             }
             return false;
-        }        
+        }
 
         public override void Translate(int x, int y, int xAmount, int yAmount)
         {
@@ -149,7 +149,7 @@ namespace UseCaseApp
 
         public override void SetText(string value)
         {
-           
+
         }
     }
 }
